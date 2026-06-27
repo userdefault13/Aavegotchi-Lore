@@ -30,9 +30,10 @@ const {
 const { createWorldCommit } = require('../api/services/worldCommits.cjs');
 const { CANON_PAGES, LANDMARK_BLURBS, buildCanonPageDoc } = require('./litepaper-canon-data.cjs');
 const { NINE_AADEPTS_PAGES, NINE_AADEPTS_LANDMARK_BLURBS } = require('./nine-aadepts-canon-data.cjs');
+const { AAVEGOTCHI_LORE_PAGES, AAVEGOTCHI_LORE_LANDMARK_BLURBS } = require('./aavegotchi-lore-canon-data.cjs');
 
-const ALL_CANON_PAGES = [...CANON_PAGES, ...NINE_AADEPTS_PAGES];
-const ALL_LANDMARK_BLURBS = { ...LANDMARK_BLURBS, ...NINE_AADEPTS_LANDMARK_BLURBS };
+const ALL_CANON_PAGES = [...CANON_PAGES, ...AAVEGOTCHI_LORE_PAGES, ...NINE_AADEPTS_PAGES];
+const ALL_LANDMARK_BLURBS = { ...LANDMARK_BLURBS, ...AAVEGOTCHI_LORE_LANDMARK_BLURBS, ...NINE_AADEPTS_LANDMARK_BLURBS };
 
 const CANON_SLUG = (process.env.CANON_SLUG || 'gotchiverse-canon').trim();
 const CANON_TITLE = (process.env.CANON_TITLE || 'Gotchiverse Canon').trim();
@@ -117,7 +118,7 @@ async function main() {
   const worldDoc = {
     title: CANON_TITLE,
     slug: CANON_SLUG,
-    description: 'Canonical Gotchiverse lore from Realm Litepaper v1.0 and The Nine Aadepts screenplay — maintained by the DAO.',
+    description: 'Canonical Gotchiverse lore — Litepaper, Aavegotchi Lore origins, and The Nine Aadepts screenplay — maintained by the DAO.',
     templateDefs: GOTCHI_TEMPLATES,
     linkedChronicleIds: [],
     tags: [{ label: 'canon', color: 'purple' }],
@@ -145,7 +146,9 @@ async function main() {
     pageIdByKey.set(spec.pageKey, result.insertedId);
     order += 1;
   }
-  console.log(`Seeded ${CANON_PAGES.length} litepaper + ${NINE_AADEPTS_PAGES.length} Nine Aadepts pages`);
+  console.log(
+    `Seeded ${CANON_PAGES.length} litepaper + ${AAVEGOTCHI_LORE_PAGES.length} Aavegotchi Lore + ${NINE_AADEPTS_PAGES.length} Nine Aadepts pages`,
+  );
 
   await seedLandmarkPages(pagesColl, worldId, CANON_OWNER, now);
   console.log(`Seeded ${GOTCHIVERSE_LANDMARKS.length} landmark pages`);
@@ -207,7 +210,7 @@ async function main() {
 
   const commit = await createWorldCommit({
     worldId,
-    message: 'Genesis canon — Gotchiverse Litepaper + The Nine Aadepts (Episodes 1–2)',
+    message: 'Genesis canon — Litepaper + Aavegotchi Lore + Nine Aadepts (Episodes 1–2)',
     authorWallet: CANON_OWNER,
     kind: 'fork_genesis',
   });

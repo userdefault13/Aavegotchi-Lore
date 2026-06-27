@@ -13,8 +13,9 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 const require = createRequire(import.meta.url);
 const { CAMPAIGN_NODES } = require('./campaign-canon-data.cjs');
 const { NINE_AADEPTS_CAMPAIGN_NODES } = require('./nine-aadepts-canon-data.cjs');
+const { AAVEGOTCHI_LORE_CAMPAIGN_NODES } = require('./aavegotchi-lore-canon-data.cjs');
 
-const ALL_CAMPAIGN_NODES = [...CAMPAIGN_NODES, ...NINE_AADEPTS_CAMPAIGN_NODES];
+const ALL_CAMPAIGN_NODES = [...CAMPAIGN_NODES, ...AAVEGOTCHI_LORE_CAMPAIGN_NODES, ...NINE_AADEPTS_CAMPAIGN_NODES];
 const { ObjectId } = require('mongodb');
 const {
   connect,
@@ -52,7 +53,7 @@ async function main() {
   const chronicleDoc = {
     title: CANON_TITLE,
     slug: CANON_SLUG,
-    description: 'Canonical Act I campaign — litepaper scenes plus The Nine Aadepts (Episodes 1–2).',
+    description: 'Canonical Act I campaign — litepaper, Aavegotchi Lore origins, and The Nine Aadepts (Episodes 1–2).',
     linkedWorldId: loreCanon._id.toString(),
     linkedWorldBranchId: null,
     toolboard: { widgets: [] },
@@ -106,14 +107,16 @@ async function main() {
 
   const commit = await createChronicleCommit({
     chronicleId,
-    message: 'Genesis campaign canon — Gotchiverse Act I + The Nine Aadepts',
+    message: 'Genesis campaign canon — Act I + Aavegotchi Origins + Nine Aadepts',
     authorWallet: CANON_OWNER,
     kind: 'fork_genesis',
   });
 
   console.log(`Created campaign canon: ${CANON_SLUG} (${chronicleId})`);
   console.log(`Linked to lore canon: ${LORE_CANON_SLUG}`);
-  console.log(`Seeded ${ALL_CAMPAIGN_NODES.length} story nodes (${NINE_AADEPTS_CAMPAIGN_NODES.length} Nine Aadepts)`);
+  console.log(
+    `Seeded ${ALL_CAMPAIGN_NODES.length} story nodes (${AAVEGOTCHI_LORE_CAMPAIGN_NODES.length} Aavegotchi Origins, ${NINE_AADEPTS_CAMPAIGN_NODES.length} Nine Aadepts)`,
+  );
   console.log(`Genesis commit: ${commit.id}`);
 }
 

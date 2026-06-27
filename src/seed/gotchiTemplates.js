@@ -99,7 +99,7 @@ export const GOTCHI_TEMPLATES = [
     name: 'Lore Event',
     icon: '📜',
     runeFields: [
-      { id: 'eventType', label: 'Event', type: 'select', options: ['Great Battle', 'Channeling', 'Spillover', 'Prophecy', 'DAO Vote', 'Episode'] },
+      { id: 'eventType', label: 'Event', type: 'select', options: ['Great Battle', 'Channeling', 'Spillover', 'Prophecy', 'DAO Vote', 'Episode', 'Origins'] },
       { id: 'act', label: 'Act', type: 'select', options: ['Act I', 'Act II', 'Act III'] },
     ],
     blocks: [{ type: 'prose' }, { type: 'timeline' }],
