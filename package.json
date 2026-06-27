@@ -1,0 +1,54 @@
+{
+  "name": "gotchi-lore",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "predev:all": "node -e \"require('mongodb'); require('dotenv').config(); if(!process.env.MONGODB_URI) throw new Error('Missing MONGODB_URI in .env')\"",
+    "dev": "vite",
+    "dev:all": "concurrently -k -n api,vite -c green,blue \"npm run api\" \"npm run dev\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "node --watch api/server.js",
+    "api:dev": "cd api && npm run dev",
+    "seed:map-pins": "node scripts/seed-gotchiverse-pins.mjs",
+    "seed:diagram": "node scripts/seed-gotchiverse-pins.mjs",
+    "migrate:page-keys": "node scripts/migrate-page-keys.mjs",
+    "seed:canon": "node scripts/seed-canon-world.mjs",
+    "seed:campaign": "node scripts/seed-canon-campaign.mjs",
+    "clear:db": "node scripts/clear-db.mjs",
+    "dedupe:pages": "node scripts/dedupe-landmark-pages.mjs",
+    "migrate:node-keys": "node scripts/migrate-node-keys.mjs",
+    "db:reset": "node scripts/clear-db.mjs && node scripts/seed-canon-world.mjs && node scripts/seed-canon-campaign.mjs"
+  },
+  "dependencies": {
+    "@tiptap/extension-image": "^3.27.1",
+    "@tiptap/extension-placeholder": "^3.19.0",
+    "@tiptap/starter-kit": "^3.19.0",
+    "@tiptap/vue-3": "^3.19.0",
+    "@vue-flow/background": "^1.3.2",
+    "@vue-flow/core": "^1.48.2",
+    "archiver": "^8.0.0",
+    "autoprefixer": "^10.4.19",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.11.1",
+    "jsonwebtoken": "^9.0.3",
+    "mermaid": "^11.12.2",
+    "mongodb": "^6.3.0",
+    "pdfkit": "^0.19.1",
+    "pinia": "^2.1.7",
+    "postcss": "^8.4.38",
+    "siwe": "^3.0.0",
+    "tailwindcss": "^3.4.2",
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.6.0",
+    "concurrently": "^8.2.2",
+    "vite": "^4.5.0"
+  }
+}

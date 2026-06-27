@@ -1,0 +1,10 @@
+{
+  "name": "gotchi-lore",
+  "short_name": "gotchi-lore",
+  "description": "Gotchiverse Lore + Tome suite",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A0A2E",
+  "theme_color": "#651FFF",
+  "icons": [{ "src": "/ghost.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
