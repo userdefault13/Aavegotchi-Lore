@@ -29,6 +29,10 @@ const {
 } = require('../lib/mongodb.cjs');
 const { createWorldCommit } = require('../api/services/worldCommits.cjs');
 const { CANON_PAGES, LANDMARK_BLURBS, buildCanonPageDoc } = require('./litepaper-canon-data.cjs');
+const { NINE_AADEPTS_PAGES, NINE_AADEPTS_LANDMARK_BLURBS } = require('./nine-aadepts-canon-data.cjs');
+
+const ALL_CANON_PAGES = [...CANON_PAGES, ...NINE_AADEPTS_PAGES];
+const ALL_LANDMARK_BLURBS = { ...LANDMARK_BLURBS, ...NINE_AADEPTS_LANDMARK_BLURBS };
 
 const CANON_SLUG = (process.env.CANON_SLUG || 'gotchiverse-canon').trim();
 const CANON_TITLE = (process.env.CANON_TITLE || 'Gotchiverse Canon').trim();
@@ -59,13 +63,13 @@ async function linkLandmarkPins(pagesColl, worldId, pins, pageByKey, ownerWallet
 
 async function seedLandmarkPages(pagesColl, worldId, ownerWallet, now) {
   const pageByKey = new Map();
-  let order = CANON_PAGES.length;
+  let order = ALL_CANON_PAGES.length;
 
   for (const lm of GOTCHIVERSE_LANDMARKS) {
     const pageKey = `landmarks/${lm.id}`;
     const meta = landmarkPageMeta(lm);
     const blurb =
-      LANDMARK_BLURBS[lm.id] ||
+      ALL_LANDMARK_BLURBS[lm.id] ||
       `${lm.label} is a notable location on the Gotchiverse overview map (${meta.runes.zone} zone).`;
     const doc = buildCanonPageDoc(
       {
@@ -113,7 +117,7 @@ async function main() {
   const worldDoc = {
     title: CANON_TITLE,
     slug: CANON_SLUG,
-    description: 'Canonical Gotchiverse lore from Realm Litepaper v1.0 — maintained by the DAO.',
+    description: 'Canonical Gotchiverse lore from Realm Litepaper v1.0 and The Nine Aadepts screenplay — maintained by the DAO.',
     templateDefs: GOTCHI_TEMPLATES,
     linkedChronicleIds: [],
     tags: [{ label: 'canon', color: 'purple' }],
@@ -134,14 +138,14 @@ async function main() {
   const pageIdByKey = new Map();
   let order = 0;
 
-  for (const spec of CANON_PAGES) {
+  for (const spec of ALL_CANON_PAGES) {
     const parentId = spec.parentKey ? pageIdByKey.get(spec.parentKey)?.toString() || null : null;
     const doc = buildCanonPageDoc(spec, worldId, CANON_OWNER, parentId, order, now);
     const result = await pagesColl.insertOne(doc);
     pageIdByKey.set(spec.pageKey, result.insertedId);
     order += 1;
   }
-  console.log(`Seeded ${CANON_PAGES.length} litepaper section pages`);
+  console.log(`Seeded ${CANON_PAGES.length} litepaper + ${NINE_AADEPTS_PAGES.length} Nine Aadepts pages`);
 
   await seedLandmarkPages(pagesColl, worldId, CANON_OWNER, now);
   console.log(`Seeded ${GOTCHIVERSE_LANDMARKS.length} landmark pages`);
@@ -203,7 +207,7 @@ async function main() {
 
   const commit = await createWorldCommit({
     worldId,
-    message: 'Genesis canon — Gotchiverse Realm Litepaper v1.0',
+    message: 'Genesis canon — Gotchiverse Litepaper + The Nine Aadepts (Episodes 1–2)',
     authorWallet: CANON_OWNER,
     kind: 'fork_genesis',
   });
