@@ -13,7 +13,7 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const require = createRequire(import.meta.url);
 const { connect } = require('../lib/mongodb.cjs');
-const { assignMissingPageKeys } = require('../api/services/worldClone.cjs');
+const { assignMissingPageKeys } = require('../backend/services/worldClone.cjs');
 
 const worldArg = process.argv.find((a) => a.startsWith('--worldId='));
 const worldId = worldArg ? worldArg.split('=')[1] : null;

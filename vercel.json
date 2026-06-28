@@ -5,13 +5,13 @@
   "installCommand": "npm install --legacy-peer-deps && cd api && npm install",
   "framework": "vite",
   "rewrites": [
-    { "source": "/api/lore-worlds/:path*", "destination": "/api/lore-worlds?path=:path*" },
-    { "source": "/api/lore-pages/:path*", "destination": "/api/lore-pages?path=:path*" },
-    { "source": "/api/tome-chronicles/:path*", "destination": "/api/tome-chronicles?path=:path*" },
-    { "source": "/api/story-nodes/:path*", "destination": "/api/story-nodes?path=:path*" },
-    { "source": "/api/realm-maps/:path*", "destination": "/api/realm-maps?path=:path*" },
-    { "source": "/api/suite-assets/:path*", "destination": "/api/suite-assets?path=:path*" },
-    { "source": "/api/gotchi-import/:path*", "destination": "/api/gotchi-import?path=:path*" },
+    { "source": "/api/(.*)", "destination": "/api?path=$1" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30,
+      "includeFiles": "backend/**"
+    }
+  }
 }

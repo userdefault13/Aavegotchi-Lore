@@ -5,3 +5,4 @@ dist
 api/node_modules
 public/uploads/*
 !public/uploads/.gitkeep
+.vercel

@@ -23,7 +23,7 @@ const {
   getStoryNodesCollection,
   getLoreWorldsCollection,
 } = require('../lib/mongodb.cjs');
-const { createChronicleCommit } = require('../api/services/chronicleCommits.cjs');
+const { createChronicleCommit } = require('../backend/services/chronicleCommits.cjs');
 
 const CANON_SLUG = (process.env.CAMPAIGN_CANON_SLUG || 'gotchiverse-campaign-canon').trim();
 const CANON_TITLE = (process.env.CAMPAIGN_CANON_TITLE || 'Gotchiverse Act I Campaign').trim();

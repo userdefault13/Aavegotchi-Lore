@@ -5,7 +5,7 @@ import { createRequire } from 'module';
 dotenv.config();
 const require = createRequire(import.meta.url);
 const { connect, getStoryNodesCollection } = require('../lib/mongodb.cjs');
-const { generateNodeKey, uniquifyNodeKey } = require('../api/services/nodeKey.cjs');
+const { generateNodeKey, uniquifyNodeKey } = require('../backend/services/nodeKey.cjs');
 
 await connect();
 const coll = await getStoryNodesCollection();

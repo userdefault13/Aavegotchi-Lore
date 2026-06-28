@@ -27,7 +27,7 @@ const {
   getRealmMapsCollection,
   getLoreDiagramsCollection,
 } = require('../lib/mongodb.cjs');
-const { createWorldCommit } = require('../api/services/worldCommits.cjs');
+const { createWorldCommit } = require('../backend/services/worldCommits.cjs');
 const { CANON_PAGES, LANDMARK_BLURBS, buildCanonPageDoc } = require('./litepaper-canon-data.cjs');
 const { NINE_AADEPTS_PAGES, NINE_AADEPTS_LANDMARK_BLURBS } = require('./nine-aadepts-canon-data.cjs');
 const { AAVEGOTCHI_LORE_PAGES, AAVEGOTCHI_LORE_LANDMARK_BLURBS } = require('./aavegotchi-lore-canon-data.cjs');
