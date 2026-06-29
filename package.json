@@ -25,6 +25,8 @@
     "db:reset": "node scripts/clear-db.mjs && node scripts/seed-canon-world.mjs && node scripts/seed-canon-campaign.mjs"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
     "@tiptap/extension-image": "^3.27.1",
     "@tiptap/extension-placeholder": "^3.19.0",
     "@tiptap/starter-kit": "^3.19.0",

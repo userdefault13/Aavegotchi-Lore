@@ -114,6 +114,21 @@ async function getLoreGovernanceEventsCollection() {
   return coll;
 }
 
+async function getRobeBoardsCollection() {
+  const coll = await getCollection('robe_boards');
+  await coll.createIndex({ chronicleId: 1 }, { unique: true });
+  await coll.createIndex({ ownerWallet: 1, updatedAt: -1 });
+  await coll.createIndex({ slug: 1 }, { unique: true, sparse: true });
+  return coll;
+}
+
+async function getRobeFramesCollection() {
+  const coll = await getCollection('robe_frames');
+  await coll.createIndex({ boardId: 1, order: 1 });
+  await coll.createIndex({ boardId: 1, storyNodeId: 1 }, { unique: true });
+  return coll;
+}
+
 async function ensureIndexes() {
   await getLoreWorldsCollection();
   await getLorePagesCollection();
@@ -128,6 +143,8 @@ async function ensureIndexes() {
   await getLoreProposalsCollection();
   await getLoreProposalCommentsCollection();
   await getLoreGovernanceEventsCollection();
+  await getRobeBoardsCollection();
+  await getRobeFramesCollection();
   const pages = await getLorePagesCollection();
   await pages.createIndex(
     { worldId: 1, pageKey: 1 },
@@ -160,5 +177,7 @@ module.exports = {
   getLoreProposalCommentsCollection,
   getLoreGovernanceEventsCollection,
   getSuiteAssetsCollection,
+  getRobeBoardsCollection,
+  getRobeFramesCollection,
   ensureIndexes,
 };

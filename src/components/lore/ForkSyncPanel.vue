@@ -1,5 +1,5 @@
 <template>
-  <aside :class="$style.panel">
+  <aside :class="[$style.panel, embedded && $style.embedded]">
     <h3 class="font-pixel text-[8px] mb-1">Branch sync</h3>
     <p v-if="loading" class="text-xs opacity-50">Checking upstream…</p>
     <template v-else-if="status?.isBranch || status?.isFork">
@@ -78,6 +78,7 @@ defineProps({
   loading: { type: Boolean, default: false },
   committing: { type: Boolean, default: false },
   worldId: { type: String, default: '' },
+  embedded: { type: Boolean, default: false },
 });
 
 defineEmits(['checkpoint']);
@@ -99,6 +100,12 @@ function kindLabel(kind) {
   border-left: 2px solid #651fff;
   padding: 0.75rem 0.75rem 0.75rem 0.65rem;
   background: rgba(101, 31, 255, 0.06);
+}
+.embedded {
+  width: 100%;
+  border-left: none;
+  padding: 0;
+  background: transparent;
 }
 .upstreamLink {
   display: block;

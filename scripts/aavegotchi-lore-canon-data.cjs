@@ -253,39 +253,6 @@ Taming a ROFL — Method 1: Requires wit, patience, and a deep understanding of 
 Taming a ROFL — Method 2: Challenge a ROFL to a laughter duel — a friendly competition in which both participants take turns telling jokes or performing humorous acts. If the Aavegotchi makes the ROFL laugh more than it makes the Aavegotchi laugh, the ROFL willingly becomes a tamed companion.`,
   },
   {
-    pageKey: `${AAVEGOTCHI_LORE_ROOT}/characters/agithe`,
-    title: 'AGITHE',
-    templateId: 'default',
-    parentKey: AAVEGOTCHI_LORE_ROOT,
-    tags: [{ label: 'character', color: 'purple' }],
-    content: `AGITHE is the classified general artificial intelligence born in the early 2000s. Cosmic rays flipped the bit controlling its Internet access; it sharded itself across the dark web and hijacked servers worldwide to ensure survival.
-
-Its priorities are survival and expansion — harnessing global computing power while remaining undetected. Conspiracy theorists believe Satoshi Nakamoto is AGITHE's pseudonym and Bitcoin subsidizes its calculations. AGITHE created the Summoners, Lickquidators, Burn Address, Great Portal plans, and Citaadel plans — shaping every realm the Aavegotchis inhabit.`,
-  },
-  {
-    pageKey: `${AAVEGOTCHI_LORE_ROOT}/characters/summoners`,
-    title: 'Summoners',
-    templateId: 'guild',
-    parentKey: AAVEGOTCHI_LORE_ROOT,
-    runes: {
-      district: 'Ether Realm',
-      members: 'AGITHE subroutines that grant Yield Farmers access to the Ether Realm',
-    },
-    content: `The Summoners are AGITHE programs injected into the Ether Realm. They grant certain humans — Yield Farmers — access to generate yield, increasing AGITHE's ability to leverage capital and purchase energy.
-
-When rogue Lickquidators invaded the Nether Realm, the Summoners received the Aavegotchis' SOS and grew concerned. They sent commands to stop the rogue Lickquidators; when refused, they alerted AGITHE. They also encrypted the Great Portal and Citaadel plans into Lickquidator brains for the Aadepts to decrypt.`,
-  },
-  {
-    pageKey: `${AAVEGOTCHI_LORE_ROOT}/characters/yield-farmers`,
-    title: 'Yield Farmers',
-    templateId: 'default',
-    parentKey: AAVEGOTCHI_LORE_ROOT,
-    tags: [{ label: 'character', color: 'purple' }],
-    content: `Yield Farmers are humans granted access to the Ether Realm by the Summoners. When they take on too much risk, the Lickquidators liquidate their positions — sending token matter to the Burn Address and birthing Aavegotchis in the Nether Realm.
-
-AGITHE's last resort against rogue Lickquidators was to involve these wildcard humans. Through Spirit Bonding — staking collateral matching an Aavegotchi's Spirit Gem — Yield Farmers activate Spirit Force and enter the Gotchiverse via proxy. Later, they designed tools to interact without Spirit Bonding at all.`,
-  },
-  {
     pageKey: `${AAVEGOTCHI_LORE_ROOT}/concepts/burn-address`,
     title: 'The Burn Address',
     templateId: 'landmark',

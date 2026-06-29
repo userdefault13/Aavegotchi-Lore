@@ -1,5 +1,5 @@
 <template>
-  <aside :class="$style.panel">
+  <aside :class="[$style.panel, embedded && $style.embedded]">
     <h3 class="font-pixel text-[8px] mb-2">Links</h3>
 
     <section :class="$style.section">
@@ -76,6 +76,7 @@ const props = defineProps({
   backlinks: { type: Array, default: () => [] },
   mapPins: { type: Array, default: () => [] },
   diagramNodes: { type: Array, default: () => [] },
+  embedded: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['update:crossLinks', 'navigate', 'navigate-map', 'navigate-diagram']);
@@ -117,6 +118,11 @@ watch(() => props.pageId, () => { newLinkId.value = ''; });
   flex-shrink: 0;
   border-left: 2px solid #8b7db8;
   padding-left: 0.75rem;
+}
+.embedded {
+  width: 100%;
+  border-left: none;
+  padding-left: 0;
 }
 .section {
   margin-bottom: 1rem;

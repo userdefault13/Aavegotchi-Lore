@@ -57,6 +57,14 @@ const items = computed(() => {
       active: props.active === 'link',
       tip: TOME_RAIL.link,
     },
+    {
+      id: 'robe',
+      label: 'Robe',
+      icon: '🎬',
+      to: `/robe/${props.chronicleId}`,
+      active: false,
+      tip: { label: 'Robe', hint: 'Storyboard scenes into 720p video.' },
+    },
   ];
   if ((props.isBranch || props.isCanon) && props.loreBranchId) {
     base.push({
@@ -84,27 +92,30 @@ const items = computed(() => {
 
 <style module>
 .rail {
-  width: 52px;
+  width: 56px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 0.25rem;
-  padding: 0.5rem 0.35rem;
+  padding: 0.5rem 0.25rem;
   background: #120a22;
   border-right: 1px solid rgba(139, 125, 184, 0.35);
+  box-sizing: border-box;
 }
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
-  padding: 0.45rem 0.25rem;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.4rem 0.15rem;
   border-radius: 6px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.55);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  box-sizing: border-box;
 }
 .item:hover {
   background: rgba(139, 87, 255, 0.15);
@@ -115,13 +126,24 @@ const items = computed(() => {
   color: #c4b5fd;
 }
 .icon {
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex-shrink: 0;
+  font-size: 1rem;
   line-height: 1;
 }
 .label {
+  width: 100%;
+  max-width: 100%;
   font-family: 'Press Start 2P', monospace;
-  font-size: 6px;
+  font-size: 5px;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.35;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 </style>

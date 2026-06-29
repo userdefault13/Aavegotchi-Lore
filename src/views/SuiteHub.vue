@@ -2,7 +2,7 @@
   <div>
     <header :class="$style.hero">
       <h1 class="font-pixel text-sm text-purple-bright">Gotchiverse Suite</h1>
-      <p class="text-sm opacity-80 mt-2">Lore codex + Tome chronicles for the Aavegotchi ecosystem</p>
+      <p class="text-sm opacity-80 mt-2">Lore codex + Tome chronicles + Robe storyboards for the Aavegotchi ecosystem</p>
     </header>
     <div :class="$style.grid">
       <section class="card-gotchi">
@@ -15,6 +15,11 @@
         <h2 class="font-pixel text-[10px] mb-2">📖 Tome</h2>
         <p class="text-sm opacity-80 mb-3">Run campaigns — arcs, scenes, choices, session play.</p>
         <router-link to="/tome" class="btn-pixel inline-block">Open Tome</router-link>
+      </section>
+      <section class="card-gotchi">
+        <h2 class="font-pixel text-[10px] mb-2">🎬 Robe</h2>
+        <p class="text-sm opacity-80 mb-3">Storyboard Tome scenes — compose pixel panels and export 720p video.</p>
+        <router-link to="/robe" class="btn-pixel inline-block">Open Robe</router-link>
       </section>
     </div>
     <section v-if="worlds.length || chronicles.length" :class="$style.recent">

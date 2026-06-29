@@ -15,6 +15,9 @@ import ChronicleWorkspace from '@/views/tome/ChronicleWorkspace.vue';
 import TomeSyncView from '@/views/tome/TomeSyncView.vue';
 import SessionPlay from '@/views/tome/SessionPlay.vue';
 import ChronicleLink from '@/views/tome/ChronicleLink.vue';
+import RobeBoardList from '@/views/robe/RobeBoardList.vue';
+import RobeWorkspace from '@/views/robe/RobeWorkspace.vue';
+import RobePreviewView from '@/views/robe/RobePreviewView.vue';
 
 const routes = [
   { path: '/', name: 'hub', component: SuiteHub },
@@ -33,6 +36,9 @@ const routes = [
   { path: '/tome/:chronicleId/sync', name: 'tome-sync', component: TomeSyncView },
   { path: '/tome/:chronicleId/play', name: 'tome-play', component: SessionPlay },
   { path: '/tome/:chronicleId/link', name: 'tome-link', component: ChronicleLink },
+  { path: '/robe', name: 'robe-list', component: RobeBoardList },
+  { path: '/robe/:chronicleId', name: 'robe-board', component: RobeWorkspace },
+  { path: '/robe/:chronicleId/preview', name: 'robe-preview', component: RobePreviewView },
 ];
 
 export default createRouter({

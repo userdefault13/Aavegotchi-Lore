@@ -60,10 +60,13 @@ function onLeave() {
 .block {
   display: flex;
   width: 100%;
+  min-width: 0;
+  align-self: stretch;
 }
 .block > :deep(a),
 .block > :deep(button) {
   width: 100%;
+  min-width: 0;
 }
 .tip {
   position: absolute;

@@ -62,9 +62,26 @@ export const SYNC_PANEL = {
 export const LAYOUT = {
   lore: { label: 'Lore', hint: 'Wiki-style worlds, pages, maps, and DAO governance.' },
   tome: { label: 'Tome', hint: 'Campaign chronicles, scenes, and Session Play.' },
+  robe: { label: 'Robe', hint: 'Storyboard scenes into 720p video with pixel art.' },
   search: { label: 'Search', hint: 'Jump to pages, worlds, and chronicles.' },
   theme: { label: 'Theme', hint: 'Toggle light or dark mode.' },
   wallet: { label: 'Wallet', hint: 'Sign in with MetaMask to edit and propose changes.' },
+};
+
+export const ROBE_RAIL = {
+  storyboard: { label: 'Board', hint: 'Compose storyboard frames for each scene.' },
+  preview: { label: 'Preview', hint: 'Play transitions and export video.' },
+  sync: { label: 'Sync', hint: 'Re-sync frames from Tome scenes.' },
+  tome: { label: 'Tome', hint: 'Return to campaign editor.' },
+};
+
+export const ROBE_ACTIONS = {
+  sync: { label: 'Sync scenes', hint: 'Re-sync storyboard frames from Tome scene nodes.' },
+  generateFrame: { label: 'Pixel Lab', hint: 'Generate pixel art for this frame from scene + lore context.' },
+  generateMissing: { label: 'Fill gaps', hint: 'Batch-generate images for frames without artwork.' },
+  flatten: { label: 'Flatten', hint: 'Bake layers to a preview image.' },
+  exportWebm: { label: 'Export WebM', hint: 'Download preview recording.' },
+  exportMp4: { label: 'Export MP4', hint: 'Convert recording to MP4 (loads ffmpeg in browser).' },
 };
 
 export const PAGE_TREE = {

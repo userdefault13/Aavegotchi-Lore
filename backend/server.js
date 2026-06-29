@@ -18,6 +18,7 @@ const loreInventoryRouter = require('./routes/lore-inventory');
 const loreDiagramsRouter = require('./routes/lore-diagrams');
 const loreProposalsRouter = require('./routes/lore-proposals');
 const aibotRouter = require('./routes/aibot');
+const robeBoardsRouter = require('./routes/robe-boards');
 
 function createApp() {
   const app = express();
@@ -41,6 +42,7 @@ function createApp() {
   app.use('/lore-proposals', loreProposalsRouter);
   app.use('/gotchi-import', gotchiImportRouter);
   app.use('/aibot', aibotRouter);
+  app.use('/robe-boards', robeBoardsRouter);
 
   return app;
 }

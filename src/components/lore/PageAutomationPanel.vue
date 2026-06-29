@@ -1,5 +1,5 @@
 <template>
-  <aside :class="$style.panel">
+  <aside :class="[$style.panel, embedded && $style.embedded]">
     <h3 class="font-pixel text-[8px] mb-1">Automation</h3>
     <p :class="$style.hint">Mirror fields to other pages when this page saves.</p>
 
@@ -88,6 +88,7 @@ const props = defineProps({
   pages: { type: Array, default: () => [] },
   runeFields: { type: Array, default: () => [] },
   blocks: { type: Array, default: () => [] },
+  embedded: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['update:mirrorLinks', 'navigate', 'apply-now']);
@@ -177,6 +178,12 @@ function removeLink(index) {
   border-left: 2px solid #8b7db8;
   padding-left: 0.75rem;
   padding-top: 0.75rem;
+}
+.embedded {
+  width: 100%;
+  border-left: none;
+  padding-left: 0;
+  padding-top: 0;
 }
 .hint {
   font-size: 10px;

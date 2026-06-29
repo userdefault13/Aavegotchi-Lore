@@ -12,6 +12,9 @@
         <GotchiTooltip :tip="LAYOUT.tome" position="bottom">
           <router-link to="/tome" class="btn-pixel">Tome</router-link>
         </GotchiTooltip>
+        <GotchiTooltip :tip="LAYOUT.robe" position="bottom">
+          <router-link to="/robe" class="btn-pixel">Robe</router-link>
+        </GotchiTooltip>
       </nav>
       <div :class="$style.actions">
         <GotchiTooltip :tip="LAYOUT.theme" position="bottom">
@@ -32,7 +35,7 @@
       <slot />
     </main>
     <footer :class="$style.footer">
-      <span class="text-xs opacity-70">Gotchiverse Lore + Tome · Aavegotchi ecosystem</span>
+      <span class="text-xs opacity-70">Gotchiverse Lore + Tome + Robe · Aavegotchi ecosystem</span>
     </footer>
     <GotchiAibotEmbed />
   </div>

@@ -3,22 +3,7 @@
  * Aavegotchi: Gotchiverse Realm Litepaper v1.0
  */
 
-const LAYOUT = { columns: 12, rowHeight: 48, gap: 8 };
-
-function proseBlock(content, id = 'b-prose') {
-  const html = content
-    .trim()
-    .split(/\n\n+/)
-    .map((p) => `<p>${p.replace(/\n/g, ' ').trim()}</p>`)
-    .join('');
-  return {
-    id,
-    type: 'prose',
-    label: 'Lore',
-    content: html,
-    grid: { col: 1, row: 1, colSpan: 12, rowSpan: 6 },
-  };
-}
+const { LAYOUT, proseBlock, buildCanonPageDoc } = require('./canonPageBuilder.cjs');
 
 /** Narrative + reference pages (litepaper sections). */
 const CANON_PAGES = [
@@ -278,28 +263,6 @@ const LANDMARK_BLURBS = {
   'yield-fields': 'Farmlands where Gotchus Alchemica flows from REALM parcels.',
   'alpha-river': 'Alpha-rich valley feeding the Grid\'s alchemical economy.',
 };
-
-function buildCanonPageDoc(spec, worldId, ownerWallet, parentId, order, now) {
-  const blocks = [proseBlock(spec.content, `b-${spec.pageKey.replace(/\//g, '-')}`)];
-  return {
-    worldId,
-    pageKey: spec.pageKey,
-    parentId,
-    templateId: spec.templateId || 'default',
-    title: spec.title,
-    blocks,
-    layout: LAYOUT,
-    runes: spec.runes || {},
-    tags: spec.tags || [{ label: 'canon', color: 'purple' }],
-    mirrorLinks: [],
-    crossLinks: [],
-    frame: null,
-    order,
-    ownerWallet,
-    createdAt: now,
-    updatedAt: now,
-  };
-}
 
 module.exports = {
   LAYOUT,

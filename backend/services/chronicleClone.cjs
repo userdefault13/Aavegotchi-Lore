@@ -151,6 +151,14 @@ async function forkChronicle(sourceChronicleId, ownerWallet, { linkedWorldBranch
   );
 
   const created = await chronicles.findOne({ _id: chronicleResult.insertedId });
+
+  try {
+    const { forkBoardForChronicle } = require('./robeClone.cjs');
+    await forkBoardForChronicle(source._id.toString(), newChronicleId, ownerWallet, nodeIdMap);
+  } catch (err) {
+    console.error('Robe board fork:', err.message);
+  }
+
   return {
     chronicle: created,
     reused: false,

@@ -2,6 +2,8 @@
 
 Copy these into `~/dev/AarcadeGh-t` when merging gotchi-lore.
 
+**Concierge sub-page plan:** see [concierge-integration-plan.md](./concierge-integration-plan.md) for the full phased rollout (iframe embed under `/concierge/gotchi-lore`, API parity, auth bridge).
+
 ## 1. Router (`src/router/index.js`)
 
 ```js
@@ -47,10 +49,23 @@ Add link in Games hub or Creative admin: **Gotchi-Lore** → `/gotchi-lore`
 
 Use same `MONGODB_URI` / `MONGO_DB_NAME`; collections are namespaced (`lore_worlds`, etc.).
 
-## 6. Sync script
+## 6. Sync scripts
 
 Run from gotchi-lore root:
 
 ```bash
-./scripts/sync-to-aarcadeghst.sh
+./scripts/sync-to-aarcadeghst.sh          # API routes, services, middleware
+./scripts/sync-frontend-to-aarcadeghst.sh  # Vue sources → src/gotchi-lore/
 ```
+
+Then wire routes in `src/gotchi-lore/routes.js` if new views were added.
+
+## 7. Concierge + DAO entry (implemented)
+
+| Route | Purpose |
+|-------|---------|
+| `/concierge/gotchi-lore` | Whitelisted full suite (Lore / Tome / Robe) |
+| `/aavegotchi-lore/canon` | Public read-only canon lore (linked from DAO page) |
+| `/gotchi-lore` | Redirects to Concierge hub |
+
+See [concierge-integration-plan.md](./concierge-integration-plan.md).

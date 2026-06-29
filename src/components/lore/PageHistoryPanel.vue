@@ -1,5 +1,5 @@
 <template>
-  <aside :class="$style.panel">
+  <aside :class="[$style.panel, embedded && $style.embedded]">
     <h3 class="font-pixel text-[8px] mb-2">History</h3>
     <p v-if="loading" class="text-xs opacity-50">Loading…</p>
     <ul v-else-if="revisions.length" :class="$style.list">
@@ -27,6 +27,7 @@ defineProps({
   revisions: { type: Array, default: () => [] },
   loading: { type: Boolean, default: false },
   restoring: { type: String, default: '' },
+  embedded: { type: Boolean, default: false },
 });
 
 defineEmits(['restore']);
@@ -45,6 +46,12 @@ function formatWhen(iso) {
   border-left: 2px solid #8b7db8;
   padding-left: 0.75rem;
   padding-top: 0.75rem;
+}
+.embedded {
+  width: 100%;
+  border-left: none;
+  padding-left: 0;
+  padding-top: 0;
 }
 .list {
   list-style: none;

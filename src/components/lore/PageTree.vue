@@ -1,8 +1,8 @@
 <template>
-  <aside :class="$style.tree">
+  <aside :class="[$style.tree, embedded && $style.embedded]">
     <div :class="$style.head">
       <span class="font-pixel text-[9px]">Pages</span>
-      <div :class="$style.headActions">
+      <div v-if="!readOnly" :class="$style.headActions">
         <GotchiTooltip :tip="PAGE_TREE.addChild">
           <button type="button" class="btn-pixel text-[8px]" @click="$emit('add-child', selectedId || null)">+↳</button>
         </GotchiTooltip>
@@ -43,6 +43,8 @@ import { PAGE_TREE } from '@/utils/workspaceHints';
 const props = defineProps({
   pages: { type: Array, default: () => [] },
   selectedId: { type: String, default: '' },
+  embedded: { type: Boolean, default: false },
+  readOnly: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['select', 'add', 'add-child', 'delete', 'reorder']);
@@ -78,11 +80,22 @@ function onDrop(nodeId, position) {
   padding-right: 0.75rem;
   flex-shrink: 0;
 }
+.embedded {
+  width: 100%;
+  border-right: none;
+  padding: 0 0.65rem 0.65rem;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+  flex-shrink: 0;
 }
 .headActions {
   display: flex;
@@ -92,6 +105,11 @@ function onDrop(nodeId, position) {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.embedded .list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 .tip {
   margin: 0.5rem 0 0;

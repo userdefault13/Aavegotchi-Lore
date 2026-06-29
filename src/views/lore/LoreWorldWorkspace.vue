@@ -13,62 +13,74 @@
         </p>
       </div>
       <div :class="$style.actions">
-        <GotchiTooltip v-if="canWrite && world.upstreamWorldId" :tip="LORE_ACTIONS.commit">
-          <button type="button" class="btn-pixel text-[8px]" :disabled="committing" @click="checkpointCommit">
-            {{ committing ? '…' : 'Commit' }}
-          </button>
-        </GotchiTooltip>
-        <GotchiTooltip v-if="world.upstreamWorldId" :tip="LORE_ACTIONS.pushReview">
-          <router-link
-            :to="`/lore/${worldId}/proposals?new=1`"
-            class="btn-pixel text-[8px]"
-          >
-            Push for review
-          </router-link>
-        </GotchiTooltip>
-        <GotchiTooltip v-else-if="canWrite" :tip="world.visibility === 'canonical' ? LORE_ACTIONS.recordEdit : LORE_ACTIONS.checkpoint">
-          <button type="button" class="btn-pixel text-[8px]" :disabled="committing" @click="checkpointCommit">
-            {{ committing ? '…' : world.visibility === 'canonical' ? 'Record edit' : 'Checkpoint' }}
-          </button>
-        </GotchiTooltip>
-        <GotchiTooltip v-if="world.visibility === 'canonical' && !world.upstreamWorldId" :tip="LORE_ACTIONS.branch">
-          <button type="button" class="btn-pixel text-[8px]" @click="openBranch">Branch</button>
-        </GotchiTooltip>
-        <GotchiTooltip :tip="LORE_ACTIONS.exportMd">
-          <button type="button" class="btn-pixel text-[8px]" @click="exportMd">Export MD</button>
-        </GotchiTooltip>
-        <GotchiTooltip :tip="LORE_ACTIONS.exportPdf">
-          <button type="button" class="btn-pixel text-[8px]" @click="exportPdf">Export PDF</button>
-        </GotchiTooltip>
-        <GotchiTooltip :tip="LORE_ACTIONS.maps">
-          <router-link :to="`/lore/${worldId}/maps`" class="btn-pixel text-[8px]">Maps</router-link>
-        </GotchiTooltip>
-        <GotchiTooltip :tip="LORE_ACTIONS.aiArt">
-          <button type="button" class="btn-pixel text-[8px]" @click="openAiArt">✨ AI art</button>
-        </GotchiTooltip>
-        <GotchiTooltip :tip="LORE_ACTIONS.importGotchi">
-          <button type="button" class="btn-pixel text-[8px]" @click="importGotchi">Import Gotchi</button>
-        </GotchiTooltip>
+        <div :class="$style.primaryActions">
+          <GotchiTooltip v-if="canWrite && world.upstreamWorldId" :tip="LORE_ACTIONS.commit">
+            <button type="button" class="btn-pixel text-[8px]" :disabled="committing" @click="checkpointCommit">
+              {{ committing ? '…' : 'Commit' }}
+            </button>
+          </GotchiTooltip>
+          <GotchiTooltip v-if="world.upstreamWorldId" :tip="LORE_ACTIONS.pushReview">
+            <router-link
+              :to="`/lore/${worldId}/proposals?new=1`"
+              class="btn-pixel text-[8px]"
+            >
+              Push for review
+            </router-link>
+          </GotchiTooltip>
+          <GotchiTooltip v-else-if="canWrite" :tip="world.visibility === 'canonical' ? LORE_ACTIONS.recordEdit : LORE_ACTIONS.checkpoint">
+            <button type="button" class="btn-pixel text-[8px]" :disabled="committing" @click="checkpointCommit">
+              {{ committing ? '…' : world.visibility === 'canonical' ? 'Record edit' : 'Checkpoint' }}
+            </button>
+          </GotchiTooltip>
+          <GotchiTooltip v-if="world.visibility === 'canonical' && !world.upstreamWorldId" :tip="LORE_ACTIONS.branch">
+            <button type="button" class="btn-pixel text-[8px]" @click="openBranch">Branch</button>
+          </GotchiTooltip>
+        </div>
+        <details :class="$style.moreMenu">
+          <summary class="btn-pixel text-[8px]">More</summary>
+          <div :class="$style.morePanel">
+            <GotchiTooltip :tip="LORE_ACTIONS.exportMd">
+              <button type="button" class="btn-pixel text-[8px]" @click="exportMd">Export MD</button>
+            </GotchiTooltip>
+            <GotchiTooltip :tip="LORE_ACTIONS.exportPdf">
+              <button type="button" class="btn-pixel text-[8px]" @click="exportPdf">Export PDF</button>
+            </GotchiTooltip>
+            <GotchiTooltip :tip="LORE_ACTIONS.maps">
+              <router-link :to="`/lore/${worldId}/maps`" class="btn-pixel text-[8px]">Maps</router-link>
+            </GotchiTooltip>
+            <GotchiTooltip :tip="LORE_ACTIONS.aiArt">
+              <button type="button" class="btn-pixel text-[8px]" @click="openAiArt">✨ AI art</button>
+            </GotchiTooltip>
+            <GotchiTooltip :tip="LORE_ACTIONS.importGotchi">
+              <button type="button" class="btn-pixel text-[8px]" @click="importGotchi">Import Gotchi</button>
+            </GotchiTooltip>
+          </div>
+        </details>
       </div>
     </header>
 
     <div :class="$style.body">
-      <LoreWorkspaceRail
-        :world-id="worldId"
-        active="lore"
-        :is-branch="!!world.upstreamWorldId"
-        :is-canon="world.visibility === 'canonical'"
-      />
-      <PageTree
-        :pages="pages"
-        :selected-id="selectedPageId"
-        @select="selectPage"
-        @add="addPage"
-        @add-child="addChildPage"
-        @delete="deletePage"
-        @reorder="onReorderPages"
-      />
-      <div :class="$style.editor">
+      <aside :class="$style.sidebar">
+        <LoreWorkspaceRail
+          variant="sidebar"
+          :world-id="worldId"
+          active="lore"
+          :is-branch="!!world.upstreamWorldId"
+          :is-canon="world.visibility === 'canonical'"
+        />
+        <PageTree
+          embedded
+          :pages="pages"
+          :selected-id="selectedPageId"
+          @select="selectPage"
+          @add="addPage"
+          @add-child="addChildPage"
+          @delete="deletePage"
+          @reorder="onReorderPages"
+        />
+      </aside>
+
+      <main :class="$style.main">
         <template v-if="page">
           <div :class="$style.meta">
             <input v-model="page.title" class="input-gotchi" @change="savePage" />
@@ -93,12 +105,18 @@
             </div>
           </div>
 
-          <RuneFieldEditor
-            v-if="orphanRuneFields.length"
-            :fields="orphanRuneFields"
-            v-model="page.runes"
-            @update:model-value="savePage"
-          />
+          <template v-if="orphanRuneFields.length">
+            <div :class="$style.runeSection" :style="{ height: `${runeSectionHeight}px` }">
+              <RuneFieldEditor
+                :fields="orphanRuneFields"
+                v-model="page.runes"
+                :textarea-pane-height="textareaPaneHeight"
+                @update:model-value="savePage"
+                @resize-delta="onMembersPaneResize"
+              />
+            </div>
+            <VerticalResizeHandle @resize-delta="onRuneSectionResize" />
+          </template>
 
           <div :class="$style.canvasRow">
             <PageLayoutEditor
@@ -119,71 +137,44 @@
           </div>
         </template>
         <p v-else class="text-sm opacity-60">Select or create a page</p>
-      </div>
+      </main>
 
-      <div v-if="world.upstreamWorldId || page || isCanon || linkedChronicles.length" :class="$style.rightCol">
-        <p v-if="mirrorToast" :class="$style.mirrorToast">{{ mirrorToast }}</p>
-        <aside v-if="linkedChronicles.length" :class="$style.linkedCampaigns">
-          <h3 class="font-pixel text-[8px] mb-1">Linked campaigns</h3>
-          <ul>
-            <li v-for="c in linkedChronicles" :key="c.id">
-              <router-link :to="`/tome/${c.id}`" class="text-cyan text-xs">{{ c.title }}</router-link>
-              <div class="flex gap-1 mt-1">
-                <router-link :to="`/tome/${c.id}`" class="btn-pixel text-[7px]">Edit</router-link>
-                <router-link :to="`/tome/${c.id}/play`" class="btn-pixel text-[7px]">Play</router-link>
-              </div>
-            </li>
-          </ul>
-        </aside>
-        <CanonCommitPanel
-          v-if="isCanon"
-          :world-id="worldId"
-          :commits="canonCommits"
-          :can-write="canWrite"
-          :can-review="canWrite"
-          :committing="committing"
-          @record-edit="recordDaoEdit"
-        />
-        <ForkSyncPanel
-          v-if="world.upstreamWorldId"
-          :world-id="worldId"
-          :status="syncStatus"
-          :commits="forkCommits"
-          :loading="syncLoading"
-          :committing="committing"
-          @checkpoint="checkpointCommit"
-        />
-        <template v-if="page">
-        <PageLinksPanel
-          :page-id="page.id"
-          :cross-links="page.crossLinks || []"
-          :pages="pages"
-          :backlinks="backlinks"
-          :map-pins="mapPinsForPage"
-          :diagram-nodes="diagramNodesForPage"
-          @update:cross-links="onCrossLinks"
-          @navigate="selectPage"
-          @navigate-map="navigateToMapPin"
-          @navigate-diagram="navigateToDiagramNode"
-        />
-        <PageAutomationPanel
-          :page-id="page.id"
-          :mirror-links="page.mirrorLinks || []"
-          :pages="pages"
-          :rune-fields="template?.runeFields || []"
-          :blocks="page.blocks || []"
-          @update:mirror-links="onMirrorLinks"
-          @navigate="selectPage"
-          @apply-now="applyMirrorsNow"
-        />
-        <PageHistoryPanel
-          :revisions="revisions"
-          :loading="revisionsLoading"
-          :restoring="restoringRevisionId"
-          @restore="restoreRevision"
-        />
-        </template>
-      </div>
+      <LorePageUtilSidebar
+        v-if="world.upstreamWorldId || page || isCanon || linkedChronicles.length"
+        :world-id="worldId"
+        :page="page"
+        :page-id="page?.id || ''"
+        :pages="pages"
+        :cross-links="page?.crossLinks || []"
+        :mirror-links="page?.mirrorLinks || []"
+        :backlinks="backlinks"
+        :map-pins="mapPinsForPage"
+        :diagram-nodes="diagramNodesForPage"
+        :rune-fields="template?.runeFields || []"
+        :blocks="page?.blocks || []"
+        :revisions="revisions"
+        :revisions-loading="revisionsLoading"
+        :restoring-revision-id="restoringRevisionId"
+        :sync-status="syncStatus"
+        :fork-commits="forkCommits"
+        :sync-loading="syncLoading"
+        :canon-commits="canonCommits"
+        :linked-chronicles="linkedChronicles"
+        :mirror-toast="mirrorToast"
+        :is-canon="isCanon"
+        :is-branch="!!world.upstreamWorldId"
+        :can-write="canWrite"
+        :committing="committing"
+        @checkpoint="checkpointCommit"
+        @record-edit="recordDaoEdit"
+        @update:cross-links="onCrossLinks"
+        @update:mirror-links="onMirrorLinks"
+        @navigate="selectPage"
+        @navigate-map="navigateToMapPin"
+        @navigate-diagram="navigateToDiagramNode"
+        @apply-now="applyMirrorsNow"
+        @restore="restoreRevision"
+      />
     </div>
   </div>
 </template>
@@ -196,11 +187,8 @@ import { GOTCHI_TEMPLATES, TAG_COLORS } from '@/seed/gotchiTemplates';
 import PageTree from '@/components/lore/PageTree.vue';
 import PageLayoutEditor from '@/components/lore/PageLayoutEditor.vue';
 import RuneFieldEditor from '@/components/lore/RuneFieldEditor.vue';
-import PageLinksPanel from '@/components/lore/PageLinksPanel.vue';
-import PageAutomationPanel from '@/components/lore/PageAutomationPanel.vue';
-import ForkSyncPanel from '@/components/lore/ForkSyncPanel.vue';
-import CanonCommitPanel from '@/components/lore/CanonCommitPanel.vue';
-import PageHistoryPanel from '@/components/lore/PageHistoryPanel.vue';
+import VerticalResizeHandle from '@/components/shared/VerticalResizeHandle.vue';
+import LorePageUtilSidebar from '@/components/lore/LorePageUtilSidebar.vue';
 import LoreWorkspaceRail from '@/components/lore/LoreWorkspaceRail.vue';
 import GotchiTooltip from '@/components/shared/GotchiTooltip.vue';
 import { LORE_ACTIONS } from '@/utils/workspaceHints';
@@ -249,6 +237,55 @@ const daoEditPages = ref(new Set());
 const linkedChronicles = ref([]);
 const templates = ref(GOTCHI_TEMPLATES);
 
+const RUNE_SECTION_STORAGE_KEY = 'gotchi-lore-rune-section-height';
+const TEXTAREA_PANE_STORAGE_KEY = 'gotchi-lore-rune-textarea-height';
+const RUNE_TOP_CHROME = 92;
+const MIN_RUNE_SECTION = 160;
+const MAX_RUNE_SECTION = 560;
+const MIN_TEXTAREA_PANE = 96;
+const MAX_TEXTAREA_PANE = 440;
+const DEFAULT_TEXTAREA_PANE = 160;
+const DEFAULT_RUNE_SECTION = RUNE_TOP_CHROME + DEFAULT_TEXTAREA_PANE + 12;
+
+const textareaPaneHeight = ref(DEFAULT_TEXTAREA_PANE);
+const runeSectionHeight = ref(DEFAULT_RUNE_SECTION);
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function clampRuneSection(value) {
+  return clamp(value, MIN_RUNE_SECTION, MAX_RUNE_SECTION);
+}
+
+function clampTextareaPane(value) {
+  return clamp(value, MIN_TEXTAREA_PANE, MAX_TEXTAREA_PANE);
+}
+
+function syncSectionHeightFromTextarea() {
+  runeSectionHeight.value = clampRuneSection(RUNE_TOP_CHROME + textareaPaneHeight.value + 12);
+}
+
+function persistRuneLayout() {
+  localStorage.setItem(RUNE_SECTION_STORAGE_KEY, String(runeSectionHeight.value));
+  localStorage.setItem(TEXTAREA_PANE_STORAGE_KEY, String(textareaPaneHeight.value));
+}
+
+function onMembersPaneResize(deltaY) {
+  textareaPaneHeight.value = clampTextareaPane(textareaPaneHeight.value + deltaY);
+  syncSectionHeightFromTextarea();
+  persistRuneLayout();
+}
+
+function onRuneSectionResize(deltaY) {
+  const nextSection = clampRuneSection(runeSectionHeight.value + deltaY);
+  const applied = nextSection - runeSectionHeight.value;
+  if (applied === 0) return;
+  runeSectionHeight.value = nextSection;
+  textareaPaneHeight.value = clampTextareaPane(textareaPaneHeight.value + applied);
+  persistRuneLayout();
+}
+
 const canWrite = computed(() => {
   if (!world.value) return false;
   const addr = (wallet.address || '').toLowerCase();
@@ -294,7 +331,22 @@ const diagramNodesForPage = computed(() => {
   return findDiagramNodesForPage(diagrams.value, page.value.id);
 });
 
-onMounted(load);
+onMounted(() => {
+  const savedTextarea = Number.parseInt(localStorage.getItem(TEXTAREA_PANE_STORAGE_KEY) || '', 10);
+  const savedSection = Number.parseInt(localStorage.getItem(RUNE_SECTION_STORAGE_KEY) || '', 10);
+  if (Number.isFinite(savedTextarea)) {
+    textareaPaneHeight.value = clampTextareaPane(savedTextarea);
+  }
+  if (Number.isFinite(savedSection)) {
+    runeSectionHeight.value = clampRuneSection(savedSection);
+    textareaPaneHeight.value = clampTextareaPane(
+      runeSectionHeight.value - RUNE_TOP_CHROME - 12,
+    );
+  } else {
+    syncSectionHeightFromTextarea();
+  }
+  load();
+});
 onUnmounted(() => {
   if (daoEditTimer.value) window.clearTimeout(daoEditTimer.value);
 });
@@ -731,67 +783,91 @@ function openAiArt() {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  align-items: flex-start;
+}
+.primaryActions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.moreMenu {
+  position: relative;
+}
+.moreMenu summary {
+  list-style: none;
+  cursor: pointer;
+}
+.moreMenu summary::-webkit-details-marker {
+  display: none;
+}
+.morePanel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 9rem;
+  padding: 0.55rem;
+  background: #1a142d;
+  border: 2px solid #8b7db8;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 rgba(139, 125, 184, 0.35);
 }
 .body {
   display: flex;
   gap: 0;
-  min-height: 520px;
+  min-height: min(720px, calc(100vh - 220px));
+  max-height: calc(100vh - 180px);
   border: 2px solid #47238d;
   border-radius: 4px;
   overflow: hidden;
   background: #0f0b1e;
 }
-.editor {
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  background: rgba(26, 10, 46, 0.9);
+  border-right: 2px solid #47238d;
+}
+.main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  overflow-y: auto;
+  gap: 0;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
   min-width: 0;
+  min-height: 0;
+  background: rgba(15, 11, 30, 0.5);
+}
+.meta {
+  flex-shrink: 0;
+  margin-bottom: 0.75rem;
+}
+.runeSection {
+  flex-shrink: 0;
+  min-height: 160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .canvasRow {
   display: flex;
   flex: 1;
-  min-height: 400px;
+  min-height: 160px;
   min-width: 0;
+  overflow: hidden;
 }
 .metaRow {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-top: 0.35rem;
-}
-.rightCol {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  max-height: 100%;
-  overflow-y: auto;
-}
-.mirrorToast {
-  margin: 0;
-  padding: 0.45rem 0.65rem;
-  font-size: 0.7rem;
-  line-height: 1.35;
-  color: #c4b5fd;
-  background: rgba(76, 29, 149, 0.35);
-  border-bottom: 1px solid rgba(139, 125, 184, 0.25);
-}
-.linkedCampaigns {
-  width: 180px;
-  flex-shrink: 0;
-  border-left: 2px solid #0891b2;
-  padding: 0.75rem;
-  background: rgba(8, 145, 178, 0.06);
-  margin-bottom: 0.5rem;
-}
-.linkedCampaigns ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.linkedCampaigns li {
-  margin-bottom: 0.5rem;
 }
 </style>

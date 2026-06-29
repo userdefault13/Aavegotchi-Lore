@@ -228,3 +228,22 @@ export const aibotApi = {
       body: JSON.stringify({ query, wallet: wallet || localStorage.getItem('gotchi-lore-wallet') || '' }),
     }),
 };
+
+export const robeApi = {
+  listBoards: () => request(getUrl('robe-boards')),
+  getBoardForChronicle: (chronicleId) => request(getUrl('robe-boards', '', { chronicleId })),
+  updateBoard: (id, data) =>
+    request(getUrl('robe-boards', `/${id}`), { method: 'PATCH', body: JSON.stringify(data) }),
+  listFrames: (boardId) => request(getUrl('robe-boards', `/${boardId}/frames`)),
+  updateFrame: (boardId, frameId, data) =>
+    request(getUrl('robe-boards', `/${boardId}/frames/${frameId}`), {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    }),
+  syncBoard: (boardId) => request(getUrl('robe-boards', `/${boardId}/sync`), { method: 'POST' }),
+  generateMissing: (boardId, limit = 5) =>
+    request(getUrl('robe-boards', `/${boardId}/generate-missing`), {
+      method: 'POST',
+      body: JSON.stringify({ limit }),
+    }),
+};

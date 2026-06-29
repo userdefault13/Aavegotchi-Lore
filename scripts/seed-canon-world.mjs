@@ -31,6 +31,8 @@ const { createWorldCommit } = require('../backend/services/worldCommits.cjs');
 const { CANON_PAGES, LANDMARK_BLURBS, buildCanonPageDoc } = require('./litepaper-canon-data.cjs');
 const { NINE_AADEPTS_PAGES, NINE_AADEPTS_LANDMARK_BLURBS } = require('./nine-aadepts-canon-data.cjs');
 const { AAVEGOTCHI_LORE_PAGES, AAVEGOTCHI_LORE_LANDMARK_BLURBS } = require('./aavegotchi-lore-canon-data.cjs');
+const { CHARACTERS_HUB, CHARACTER_SPECS, wireCharacterLinks } = require('./characters-canon-data.cjs');
+const { buildCharacterPageDoc, buildCharacterStubDoc } = require('./canonPageBuilder.cjs');
 
 const ALL_CANON_PAGES = [...CANON_PAGES, ...AAVEGOTCHI_LORE_PAGES, ...NINE_AADEPTS_PAGES];
 const ALL_LANDMARK_BLURBS = { ...LANDMARK_BLURBS, ...AAVEGOTCHI_LORE_LANDMARK_BLURBS, ...NINE_AADEPTS_LANDMARK_BLURBS };
@@ -62,9 +64,9 @@ async function linkLandmarkPins(pagesColl, worldId, pins, pageByKey, ownerWallet
   return nextPins;
 }
 
-async function seedLandmarkPages(pagesColl, worldId, ownerWallet, now) {
+async function seedLandmarkPages(pagesColl, worldId, ownerWallet, now, startOrder) {
   const pageByKey = new Map();
-  let order = ALL_CANON_PAGES.length;
+  let order = startOrder;
 
   for (const lm of GOTCHIVERSE_LANDMARKS) {
     const pageKey = `landmarks/${lm.id}`;
@@ -150,7 +152,38 @@ async function main() {
     `Seeded ${CANON_PAGES.length} litepaper + ${AAVEGOTCHI_LORE_PAGES.length} Aavegotchi Lore + ${NINE_AADEPTS_PAGES.length} Nine Aadepts pages`,
   );
 
-  await seedLandmarkPages(pagesColl, worldId, CANON_OWNER, now);
+  const hubParentId = null;
+  const hubDoc = buildCanonPageDoc(CHARACTERS_HUB, worldId, CANON_OWNER, hubParentId, order, now);
+  const hubResult = await pagesColl.insertOne(hubDoc);
+  pageIdByKey.set(CHARACTERS_HUB.pageKey, hubResult.insertedId);
+  order += 1;
+
+  const charactersHubId = hubResult.insertedId.toString();
+  for (const spec of CHARACTER_SPECS) {
+    const doc = buildCharacterPageDoc(spec, worldId, CANON_OWNER, charactersHubId, order, now, GOTCHI_TEMPLATES);
+    const result = await pagesColl.insertOne(doc);
+    pageIdByKey.set(spec.pageKey, result.insertedId);
+    order += 1;
+  }
+
+  let stubCount = 0;
+  for (const spec of CHARACTER_SPECS) {
+    for (const stub of spec.narrativeStubs || []) {
+      const parentId = pageIdByKey.get(stub.parentKey)?.toString() || null;
+      const stubDoc = buildCharacterStubDoc(stub, spec.title, worldId, CANON_OWNER, parentId, order, now);
+      const result = await pagesColl.insertOne(stubDoc);
+      pageIdByKey.set(stub.pageKey, result.insertedId);
+      order += 1;
+      stubCount += 1;
+    }
+  }
+
+  const wired = await wireCharacterLinks(pagesColl, pageIdByKey, now);
+  console.log(
+    `Seeded ${CHARACTER_SPECS.length} canonical characters + ${stubCount} narrative stubs + 1 hub (${wired} link pairs wired)`,
+  );
+
+  await seedLandmarkPages(pagesColl, worldId, CANON_OWNER, now, order);
   console.log(`Seeded ${GOTCHIVERSE_LANDMARKS.length} landmark pages`);
 
   const allPages = await pagesColl.find({ worldId }).toArray();
@@ -210,7 +243,7 @@ async function main() {
 
   const commit = await createWorldCommit({
     worldId,
-    message: 'Genesis canon — Litepaper + Aavegotchi Lore + Nine Aadepts (Episodes 1–2)',
+    message: 'Genesis canon — Litepaper + Aavegotchi Lore + Nine Aadepts + character roster',
     authorWallet: CANON_OWNER,
     kind: 'fork_genesis',
   });

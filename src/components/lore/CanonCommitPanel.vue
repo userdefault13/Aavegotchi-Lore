@@ -1,5 +1,5 @@
 <template>
-  <aside :class="$style.panel">
+  <aside :class="[$style.panel, embedded && $style.embedded]">
     <h3 class="font-pixel text-[8px] mb-1">Canon history</h3>
     <p :class="$style.hint">DAO direct edits and merges are recorded as world snapshots.</p>
 
@@ -42,6 +42,7 @@ defineProps({
   canWrite: { type: Boolean, default: false },
   canReview: { type: Boolean, default: false },
   committing: { type: Boolean, default: false },
+  embedded: { type: Boolean, default: false },
 });
 
 defineEmits(['record-edit']);
@@ -77,6 +78,12 @@ function kindClass(kind) {
   border-left: 2px solid #7c3aed;
   padding: 0.75rem 0.75rem 0.75rem 0.65rem;
   background: rgba(124, 58, 237, 0.08);
+}
+.embedded {
+  width: 100%;
+  border-left: none;
+  padding: 0;
+  background: transparent;
 }
 .hint {
   font-size: 10px;
