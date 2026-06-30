@@ -32,6 +32,14 @@ npm run dev:all
 | `/lore` | Lore worlds |
 | `/tome` | Chronicles |
 
+## Lore Documentation
+
+Comprehensive Aavegotchi worldbuilding documentation available in [docs/LORE-README.md](docs/LORE-README.md):
+
+- **Quick Reference** - Cheat sheet for all lore elements
+- **Online Sources** - Catalog of canonical lore from official sources
+- **Brainstorm** - Creative expansion ideas and storytelling prompts
+
 ## AarcadeGh-t merge
 
 See [docs/aarcade-integration.md](docs/aarcade-integration.md) and run `./scripts/sync-to-aarcadeghst.sh`.
