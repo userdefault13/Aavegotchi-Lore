@@ -80,6 +80,22 @@ A comprehensive brainstorming document with expansion concepts:
 
 ---
 
+### 4b. 👅 [lickquidator-origins-design.md](./lickquidator-origins-design.md)
+**Best for:** Lickquidator worldbuilding — locked design pending canon promotion
+
+Locked brainstorm (July 2026) covering:
+- **LIQ-PRIME** mechanical origin (Prime Core + swarm, Twin Ledger, First Cascade)
+- **Philosophical frame** — inevitable betrayal; Prime chose appetite
+- **Rogue splinter roster** — Matrix-mirrored cast (LINK Cube, Portal Mason, Haackor, 1337 Laptop, The Spirit Force order, The Copy, Wisps, etc.)
+- **Gratitude Age** — Lick Cairns, Emerald Tentacle wearable, Paalantir timeline
+- **Nine Aadepts cross-reference** and deferred canon promotion checklist
+
+**Use this when:** Writing Lickquidator military, splinter characters, pre-invasion Yield Fields, or wearable lore.
+
+**Status:** Design doc only — not yet in canon seed data.
+
+---
+
 ## Other Documentation
 
 ### 7. ✅ [lore-roadmap.md](./lore-roadmap.md)
