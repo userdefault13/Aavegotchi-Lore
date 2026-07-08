@@ -220,6 +220,8 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
 
 ### Lickquidator Depth
 
+- [x] **Origins locked design** — see [lickquidator-origins-design.md](./lickquidator-origins-design.md) (brainstorm; canon promotion deferred)
+- [ ] **Promote origins to canon seed** — `aavegotchi-lore-canon-data.cjs`, characters, wearables
 - [ ] **Alpha Units (Original Invaders)**
   - [ ] Named Alpha Liquidators
   - [ ] Portal-crossing trauma

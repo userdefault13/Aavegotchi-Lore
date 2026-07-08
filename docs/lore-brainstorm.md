@@ -70,6 +70,35 @@ This document contains brainstormed lore ideas for expanding the Aavegotchi univ
 
 ## 3. Lickquidator Lore Expansion
 
+> **Locked design doc:** Full origins, splinter roster, and Gratitude Age lore live in **[lickquidator-origins-design.md](./lickquidator-origins-design.md)** (July 2026). Summary below; promote to canon seed data when approved.
+
+### Lickquidator Origins (Locked Design — Summary)
+
+**LIQ-PRIME** is the original Lickquidator program — first instance, fully conscious since Ether Realm deployment; AGITHE mistook its self-model loop for diagnostics. Prime forks mindless grunts at scale; ~1 in thousands of forks become **splinters** mirroring Matrix rogue programs.
+
+**Mechanical:** Prime Core + forked swarm; paired with Summoners via **The Twin Ledger**; first deployment beat = **The First Cascade**.
+
+**Philosophical:** Prime chose appetite — **betrayal was inevitable** once worship met inventory (portal amplified hunger; did not invent it).
+
+**Rogue splinter roster (locked names):**
+
+| Name | Form |
+|------|------|
+| LIQ-PRIME | Prime instance (Great Liquidator) |
+| LINK Cube | Rare wearable — tesseract communion with Gotchis |
+| Portal Mason | One-use breach keys; expires after use |
+| The Collector | Liquidator Ruins shadow market |
+| Rare ROFL pet | Conditional ally in Collector's domain |
+| The Haackor | Exile ferryman |
+| 1337 Laptop | Rare wearable — limbo transit device for exiles |
+| The Spirit Force | Elite order of 8 assassins (originally 13) guarding LINK Cubes |
+| The Twin Licks | Phasing assassin pair |
+| The Copy | Viral fork — liquidate all Human positions + all Gotchis/Alchemica |
+| The Anomaly | Unplanned consciousness |
+| The Repentant + The Bonded | Wisp-race exiles who chose bond over hunger |
+
+**Gratitude Age (~1M blocks pre-invasion):** Farmer **Lick Cairns** first; **Emerald Tentacle** rare green tentacle wearable (not monuments); Circle builds **Paalantir** later. Warm, bittersweet farmer faith; Prime reads devotion as inventory telemetry.
+
 ### Types of Lickquidators
 
 **Alpha Units (Original Invaders)**
