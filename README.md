@@ -39,6 +39,7 @@ Comprehensive Aavegotchi worldbuilding documentation available in [docs/LORE-REA
 - **Quick Reference** - Cheat sheet for all lore elements
 - **Online Sources** - Catalog of canonical lore from official sources
 - **Brainstorm** - Creative expansion ideas and storytelling prompts
+- **Captain Aave** - Character development brainstorm for aAAVE hero
 
 ## AarcadeGh-t merge
 

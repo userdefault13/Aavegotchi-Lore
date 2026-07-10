@@ -80,9 +80,30 @@ A comprehensive brainstorming document with expansion concepts:
 
 ---
 
+### 5. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
+**Best for:** Character development, Captain Aave creation, hero design
+
+A comprehensive 6000+ word character brainstorm for Captain Aave:
+- **5 Core Identity Options** - Spirit Force Pioneer, Protocol Whisperer, People's Hero, etc.
+- **5 Character Archetypes** - Strategic Commander, Charismatic Maverick, Wise Mentor, etc.
+- **Powers & Abilities** - Protocol Synergy, Liquidity Manipulation, Community Empowerment
+- **6 Origin Stories** - Liquidation Crisis, Aadept's Blessing, Grid Rebellion, Time Loop, etc.
+- **Visual Design Concepts** - Tactical, Nautical, Paladin, Tech, Legacy aesthetics
+- **Relationships** - Dynamics with Aadepts, Citaadel, Grid, Lickquidators, humans
+- **Story Arcs** - Three-act character development, multiple endings
+- **Gameplay Integration** - Quest-giver, playable character, commander role
+- **Implementation Phases** - Minimal, medium, and full rollout plans
+- **Recommended Concept** - "Protocol Paladin" balanced hero approach
+
+Quick Reference: [captain-aave-quick-reference.md](./captain-aave-quick-reference.md)
+
+**Use this when:** You're developing Captain Aave as a character or designing other heroes for the Gotchiverse.
+
+---
+
 ## Other Documentation
 
-### 7. ✅ [lore-roadmap.md](./lore-roadmap.md)
+### 6. ✅ [lore-roadmap.md](./lore-roadmap.md)
 **Best for:** Project planning, tracking progress, prioritizing work
 
 A phased development checklist:
