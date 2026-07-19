@@ -80,7 +80,23 @@ A comprehensive brainstorming document with expansion concepts:
 
 ---
 
-### 5. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
+### 5. ⚗️ [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md)
+**Best for:** Alchemica ecology, world-power economy, Factorio-like Foundry design
+
+Design doc covering:
+- Why Alchemica already maps to factory-game loops
+- Four-element temperaments (FUD / FOMO / ALPHA / KEK)
+- Installation → machine role mapping
+- Spillover-as-pollution threat model
+- Parcel Foundry vertical-slice recommendations
+
+**Canon seed:** `/workspace/scripts/alchemica-canon-data.cjs`
+
+**Use this when:** Expanding Alchemica lore or prototyping automation / factory gameplay.
+
+---
+
+### 6. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
 **Best for:** Character development, Captain Aave creation, hero design
 
 A comprehensive 6000+ word character brainstorm for Captain Aave:
@@ -103,7 +119,7 @@ Quick Reference: [captain-aave-quick-reference.md](./captain-aave-quick-referenc
 
 ## Other Documentation
 
-### 6. ✅ [lore-roadmap.md](./lore-roadmap.md)
+### 7. ✅ [lore-roadmap.md](./lore-roadmap.md)
 **Best for:** Project planning, tracking progress, prioritizing work
 
 A phased development checklist:
@@ -133,6 +149,10 @@ Phased rollout plan for Concierge sub-page integration.
 ### 10. 📊 [parity-matrix.md](./parity-matrix.md)
 Feature parity tracking between systems.
 
+### 11. ⚗️ Alchemica Foundry (seed + design)
+- Seed: `/workspace/scripts/alchemica-canon-data.cjs`
+- Design: [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md)
+
 ---
 
 ## How the Lore System Works
@@ -161,6 +181,7 @@ The canonical Aavegotchi lore is already implemented in:
 ✅ Post-Aadept era and The Chosen  
 ✅ ROFLs and companion lore  
 ✅ Burn Address, Alchemica, Spirit Bonding concepts  
+✅ Gotchus Alchemica ecology + Foundry / factory-loop framing (`alchemica-canon-data.cjs`)  
 
 ### Expansion Opportunities
 
@@ -173,6 +194,7 @@ The system is ready for community-driven expansion in areas like:
 - Faction conflicts and alliances
 - Technology evolution and discoveries
 - Mysteries and long-term plot threads
+- Parcel Foundry vertical slice (recipes, mote-stream UX, raid cadence)
 
 ---
 

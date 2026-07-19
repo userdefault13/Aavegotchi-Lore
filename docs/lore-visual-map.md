@@ -377,6 +377,38 @@ FUTURE ──┤
 
 ---
 
+## Alchemica Foundry Loop (Factory Mode)
+
+```
+ SURVEY          CHANNEL           EXTRACT
+ (veins)  →  (Aaltar/Kinship)  →  (Haarvesters)
+                                      |
+                                      ↓
+                                   STORE
+                                (Reservoirs)
+                                      |
+                         ┌────────────┼────────────┐
+                         ↓            ↓            ↓
+                      REFINE       SPILLOVER     TITHE
+                    (recipes)    (map motes)   (Portal)
+                         |            |            |
+                         ↓            ↓            ↓
+                       CRAFT     LICKQUIDATORS  FORCE FIELD
+                   (Installs)     (attracted)    readiness
+                         |            |
+                         └──── DEFEND ┘
+                                |
+                         GREAT BATTLE
+                         (Force Field drops)
+                                |
+                            REPLENISH
+                          (veins refill)
+```
+
+See `docs/alchemica-factory-brainstorm.md` for design pillars and vertical-slice plans.
+
+---
+
 ## Character Archetypes Web
 
 ```

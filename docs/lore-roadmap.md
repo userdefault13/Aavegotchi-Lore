@@ -103,6 +103,7 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
   - [ ] Daily operations
   
 - [ ] **Alchemical Guild District** (Researchers)
+  - [x] Guild ranks + Foundry Doctrine (seeded in alchemica canon)
   - [ ] Laboratories and experiments
   - [ ] Leading scientists
   - [ ] Current projects
@@ -264,6 +265,17 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
 ---
 
 ## Phase 5: Advanced Content 📚
+
+### Gotchus Alchemica Foundry (Factorio-like)
+
+- [x] **Alchemica ecology pages** (`scripts/alchemica-canon-data.cjs`)
+- [x] **Four-element temperaments** (FUD / FOMO / ALPHA / KEK design roles)
+- [x] **Foundry Doctrine + factory loop** (Spillover-as-pollution framing)
+- [x] **Design brainstorm** (`docs/alchemica-factory-brainstorm.md`)
+- [ ] **Starter recipe spreadsheet** (12 Installations, multi-element costs)
+- [ ] **Parcel Foundry vertical slice** (place → extract → spill → scout raid)
+- [ ] **Tome one-shot:** Alchemical Guild initiation ("Foundry of the Four")
+- [ ] **Guild intermediate machines** (Crucible / Loom / Kiln) — DAO review
 
 ### Technology & Innovation
 

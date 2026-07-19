@@ -22,6 +22,13 @@ This document contains brainstormed lore ideas for expanding the Aavegotchi univ
 - **Spirit Bonding**: Connection between humans and Gotchis via staked collateral
 - **The Chosen**: Gotchis who returned from the Great Portal with Spirit Force
 
+### Alchemica Foundry (active expansion)
+Detailed ecology + Factorio-like gameplay framing lives in:
+- `/workspace/docs/alchemica-factory-brainstorm.md`
+- `/workspace/scripts/alchemica-canon-data.cjs` (seeded under `gameplay/farming-alchemica`)
+
+Thesis: Parcel = factory floor, Spillover = pollution, Lickquidators = biters, Portal tithe = long-term sink, Great Battles = scheduled mega-raids with vein replenish.
+
 ---
 
 ## 2. Factions & Social Structure (EXPANSION IDEAS)

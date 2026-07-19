@@ -5,17 +5,18 @@
 
 ---
 
-## 📚 What You Have (7 Documents)
+## 📚 What You Have (Core Documents)
 
-| # | File | Size | What It Does |
-|---|------|------|--------------|
-| 1️⃣ | [**BRAINSTORM-SUMMARY.md**](./BRAINSTORM-SUMMARY.md) | 15K | **START HERE** - Overview of everything |
-| 2️⃣ | [**lore-quick-reference.md**](./lore-quick-reference.md) | 14K | Cheat sheet for all lore elements |
-| 3️⃣ | [**online-lore-sources.md**](./online-lore-sources.md) | 18K | What's canonical, sources, gaps |
-| 4️⃣ | [**lore-brainstorm.md**](./lore-brainstorm.md) | 23K | 500+ creative expansion ideas |
-| 5️⃣ | [**lore-visual-map.md**](./lore-visual-map.md) | 20K | ASCII diagrams and maps |
-| 6️⃣ | [**lore-roadmap.md**](./lore-roadmap.md) | 17K | 150+ development tasks |
-| 7️⃣ | [**LORE-README.md**](./LORE-README.md) | 14K | Master navigation hub |
+| # | File | What It Does |
+|---|------|--------------|
+| 1️⃣ | [**BRAINSTORM-SUMMARY.md**](./BRAINSTORM-SUMMARY.md) | **START HERE** - Overview of everything |
+| 2️⃣ | [**lore-quick-reference.md**](./lore-quick-reference.md) | Cheat sheet for all lore elements |
+| 3️⃣ | [**online-lore-sources.md**](./online-lore-sources.md) | What's canonical, sources, gaps |
+| 4️⃣ | [**lore-brainstorm.md**](./lore-brainstorm.md) | 500+ creative expansion ideas |
+| 5️⃣ | [**lore-visual-map.md**](./lore-visual-map.md) | ASCII diagrams and maps |
+| 6️⃣ | [**lore-roadmap.md**](./lore-roadmap.md) | 150+ development tasks |
+| 7️⃣ | [**LORE-README.md**](./LORE-README.md) | Master navigation hub |
+| 8️⃣ | [**alchemica-factory-brainstorm.md**](./alchemica-factory-brainstorm.md) | Alchemica economy + Factorio-like Foundry design |
 
 **Total:** ~120K words of comprehensive documentation
 

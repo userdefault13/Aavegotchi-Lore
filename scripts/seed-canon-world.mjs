@@ -31,11 +31,17 @@ const { createWorldCommit } = require('../backend/services/worldCommits.cjs');
 const { CANON_PAGES, LANDMARK_BLURBS, buildCanonPageDoc } = require('./litepaper-canon-data.cjs');
 const { NINE_AADEPTS_PAGES, NINE_AADEPTS_LANDMARK_BLURBS } = require('./nine-aadepts-canon-data.cjs');
 const { AAVEGOTCHI_LORE_PAGES, AAVEGOTCHI_LORE_LANDMARK_BLURBS } = require('./aavegotchi-lore-canon-data.cjs');
+const { ALCHEMICA_PAGES, ALCHEMICA_LANDMARK_BLURBS } = require('./alchemica-canon-data.cjs');
 const { CHARACTERS_HUB, CHARACTER_SPECS, wireCharacterLinks } = require('./characters-canon-data.cjs');
 const { buildCharacterPageDoc, buildCharacterStubDoc } = require('./canonPageBuilder.cjs');
 
-const ALL_CANON_PAGES = [...CANON_PAGES, ...AAVEGOTCHI_LORE_PAGES, ...NINE_AADEPTS_PAGES];
-const ALL_LANDMARK_BLURBS = { ...LANDMARK_BLURBS, ...AAVEGOTCHI_LORE_LANDMARK_BLURBS, ...NINE_AADEPTS_LANDMARK_BLURBS };
+const ALL_CANON_PAGES = [...CANON_PAGES, ...AAVEGOTCHI_LORE_PAGES, ...NINE_AADEPTS_PAGES, ...ALCHEMICA_PAGES];
+const ALL_LANDMARK_BLURBS = {
+  ...LANDMARK_BLURBS,
+  ...AAVEGOTCHI_LORE_LANDMARK_BLURBS,
+  ...NINE_AADEPTS_LANDMARK_BLURBS,
+  ...ALCHEMICA_LANDMARK_BLURBS,
+};
 
 const CANON_SLUG = (process.env.CANON_SLUG || 'gotchiverse-canon').trim();
 const CANON_TITLE = (process.env.CANON_TITLE || 'Gotchiverse Canon').trim();
@@ -120,7 +126,8 @@ async function main() {
   const worldDoc = {
     title: CANON_TITLE,
     slug: CANON_SLUG,
-    description: 'Canonical Gotchiverse lore — Litepaper, Aavegotchi Lore origins, and The Nine Aadepts screenplay — maintained by the DAO.',
+    description:
+      'Canonical Gotchiverse lore — Litepaper, Aavegotchi Lore origins, The Nine Aadepts screenplay, and Gotchus Alchemica Foundry expansion — maintained by the DAO.',
     templateDefs: GOTCHI_TEMPLATES,
     linkedChronicleIds: [],
     tags: [{ label: 'canon', color: 'purple' }],
@@ -149,7 +156,7 @@ async function main() {
     order += 1;
   }
   console.log(
-    `Seeded ${CANON_PAGES.length} litepaper + ${AAVEGOTCHI_LORE_PAGES.length} Aavegotchi Lore + ${NINE_AADEPTS_PAGES.length} Nine Aadepts pages`,
+    `Seeded ${CANON_PAGES.length} litepaper + ${AAVEGOTCHI_LORE_PAGES.length} Aavegotchi Lore + ${NINE_AADEPTS_PAGES.length} Nine Aadepts + ${ALCHEMICA_PAGES.length} Alchemica pages`,
   );
 
   const hubParentId = null;
@@ -243,7 +250,8 @@ async function main() {
 
   const commit = await createWorldCommit({
     worldId,
-    message: 'Genesis canon — Litepaper + Aavegotchi Lore + Nine Aadepts + character roster',
+    message:
+      'Genesis canon — Litepaper + Aavegotchi Lore + Nine Aadepts + Alchemica Foundry + character roster',
     authorWallet: CANON_OWNER,
     kind: 'fork_genesis',
   });

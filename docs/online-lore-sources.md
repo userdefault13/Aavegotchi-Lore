@@ -439,7 +439,7 @@ This document catalogs available Aavegotchi lore found online as of June 2026.
 - What happens after the ninth Great Battle
 - Human characters who are Spirit Bonded
 - ROFL society details beyond taming mechanics
-- Alchemica ecology beyond "building blocks"
+- Alchemica ecology beyond "building blocks" *(partially addressed in-repo via `alchemica-canon-data.cjs` + `alchemica-factory-brainstorm.md` — Guild expansion, not yet official wiki)*
 - Caaverns, Rofl Reefs, other location details
 - Daily life, culture, arts, Gotchi traditions
 - Technology beyond Installations
