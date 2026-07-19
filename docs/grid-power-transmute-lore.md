@@ -54,17 +54,23 @@ New layer (expansion, not litepaper): **compute as logistics infrastructure**, n
 
 ```
 Power Plant online
-    → Servers (Haunthosts)
-        → RPC Nodes (Callspires)
-            → Indexers (Lorelooms)
-                → Miner quorum (Proof Halls)
-                    → Transmute clearance
-                        → Citaadel receiver accepts
-                            → Portal tithe carved
-                                → Credits arrive in Citaadel
+    → Coreforges (Pulsecores / CPU) + Remembrane Mills (MoteBanks / memory)
+        → Servers (Haunthosts)
+            → RPC Nodes (Callspires)
+                → Indexers (Lorelooms)
+                    → Miner quorum (Proof Halls)
+                        → Transmute clearance
+                            → Citaadel receiver accepts
+                                → Portal tithe carved
+                                    → Credits arrive in Citaadel
 ```
 
 Break any link → fall back to **caravan**.
+
+| Maker | Product | Fuel bias | Fail state |
+|-------|---------|-----------|------------|
+| **Coreforge** | Pulsecores (CPU) | ALPHA Flux + FOMO Plasma | Racks dark; no compute |
+| **Remembrane Mill** | MoteBanks (memory) | FUD Slag + KEK Vapor | Packet rain; disputed hauls |
 
 ---
 
@@ -109,7 +115,7 @@ Secondary objectives:
 |---------|--------|
 | 1 Barrel Road | Claim edge parcel → Defi Desert toll → gate delivery |
 | 2 First Sparkworks | Fuel grades → plant online → failed transmute (no RPC) |
-| 3 Callspire Rising | Rackhollow → first successful transmute |
+| 3 Callspire Rising | Component Run (Pulsecores + MoteBanks) → Rackhollow → first transmute |
 | 4 Raid Scent | Gloam raid → disputed shipment → indexer need |
 | 5 Miner Quorum & Dynamo | Proof Halls → Citaadel notices Grid independence |
 | 6 Corestack Gambit | License vs freeboot → containment night |

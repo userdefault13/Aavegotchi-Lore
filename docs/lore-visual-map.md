@@ -424,6 +424,14 @@ See `docs/alchemica-factory-brainstorm.md` for design pillars and vertical-slice
    → Netherforge → Corestack
            |
            ↓
+   COMPONENT MAKERS
+   ┌────────┴────────┐
+   ↓                 ↓
+ Coreforge      Remembrane Mill
+ (Pulsecores)    (MoteBanks)
+   CPU               Memory
+           |
+           ↓
       COMPUTE STACK
    ┌───────┼───────┬────────┬─────────┐
    ↓       ↓       ↓        ↓         ↓

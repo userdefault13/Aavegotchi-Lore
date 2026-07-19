@@ -105,17 +105,55 @@ Doctrine: never build a Corestack without a Walk Ledger and a cold caravan path 
     ],
     content: `Once power flows, Gotchis raise a compute stack that mirrors Ether Realm infrastructure — rebuilt in Nether materials and Alchemica logic.
 
-**Data Centers (Rackhollows)** — Cooled halls of spectral servers. Store transmute buffers, Guild ledgers, and parcel state snapshots. Hungry for FUD Slag baseload and KEK Vapor to keep operators sane.
+Fabrication comes first. Without chips and buffers, Rackhollows are scenic coolers.
 
-**Block Miners (Proof Halls)** — Machines that burn FOMO Plasma to seal Grid blocks / parcel attestations. More miners = faster local finality for transmute batches, more Spillover heat, more raid scent.
+**CPU Makers (Coreforges)** — Fabrication halls that stamp **Pulsecores**, the logic dies for Haunthosts, Callspires, Lorelooms, and Proof Halls. Feed on ALPHA Flux for honest circuits and FOMO Plasma for clock speed. Starve Coreforges and every rack stays dark.
+
+**Memory Makers (Remembrane Mills)** — Weave **MoteBanks**, spectral RAM and transmute staging buffers. Bind FUD Slag for dense persistence and KEK Vapor for refresh cycles that keep packets from desyncing into meme-static. Starve Remembranes and shipments arrive incomplete — Walkers' favorite "I told you so."
+
+**Data Centers (Rackhollows)** — Cooled halls of spectral servers. Store transmute buffers, Guild ledgers, and parcel state snapshots. Hungry for FUD Slag baseload and KEK Vapor to keep operators sane. Stocked only after Pulsecores and MoteBanks arrive.
+
+**Block Miners (Proof Halls)** — Machines that burn FOMO Plasma to seal Grid blocks / parcel attestations. More miners = faster local finality for transmute batches, more Spillover heat, more raid scent. Each miner head needs a Pulsecore.
 
 **RPC Nodes (Callspires)** — Antennas with brains. Expose endpoints so Citaadel receivers (and Spirit-Bonded humans) can request balances, submit transmute jobs, and verify Portal tithe. ALPHA Flux keeps responses deterministic; starve them and RPCs lie — the worst sin on the Grid.
 
-**Indexers (Lorelooms)** — Crawl parcel events into queryable history: who channeled, what spilled, which caravan died. Without indexers, the Netherlink still pings but nobody can prove a shipment. Baazaar disputes go feral.
+**Indexers (Lorelooms)** — Crawl parcel events into queryable history: who channeled, what spilled, which caravan died. Without indexers, the Netherlink still pings but nobody can prove a shipment. Baazaar disputes go feral. Memory-hungry; Lorelooms eat MoteBanks by the crate.
 
 **Servers (Haunthosts)** — General compute for Lodges, dapps, Aadventure instances, and Guild rites. The unglamorous middle of the stack; when they die, chat dies, and caravans lose coordination.
 
-Stack rule: **Power → Servers → RPC → Indexer → Miner quorum → Transmute clearance.** Skip a layer and you ship ghosts.`,
+Stack rule: **Power → Coreforges + Remembrane Mills → Servers → RPC → Indexer → Miner quorum → Transmute clearance.** Skip a layer and you ship ghosts.`,
+  },
+  {
+    pageKey: `${GRID_POWER_ROOT}/compute-stack/component-makers`,
+    title: 'Component Makers — Coreforge & Remembrane',
+    templateId: 'installation',
+    parentKey: `${GRID_POWER_ROOT}/compute-stack`,
+    runes: { type: 'Fabrication', utility: 'CPU Pulsecores + Memory MoteBanks' },
+    tags: [
+      { label: 'grid-power', color: 'cyan' },
+      { label: 'game-design', color: 'cyan' },
+      { label: 'alchemica', color: 'gold' },
+    ],
+    content: `Component makers are the quiet bottleneck of Lighting the Grid. Power without Pulsecores is a warm ruin; power without MoteBanks is a liar's mesh.
+
+**Coreforge (CPU maker)**  
+Inputs: ALPHA Flux (logic purity) + FOMO Plasma (clock) + smol FUD Slag (die substrate).  
+Outputs: **Pulsecores** graded by honesty — Guild stamps reject "jitter dies" that make Callspires lie.  
+Bottleneck: ALPHA scarcity. Rush FOMO clocks without Flux and you mint fast, false brains.  
+Raid scent: high — glowing presses draw Gloam almost as hard as Mega Plants.
+
+**Remembrane Mill (memory maker)**  
+Inputs: FUD Slag (dense persistence) + KEK Vapor (refresh / anti-desync) + trace ALPHA Flux (addressing).  
+Outputs: **MoteBanks** — buffer modules for transmute staging, indexer caches, and Haunthost RAM.  
+Bottleneck: FUD density and KEK supply. Thin Remembranes cause packet rain: Alchemica that "arrives" incomplete and must be walked as residue.  
+Raid scent: medium — cooler than Coreforges, but Lickquidators learned empty MoteBanks force Walk Ledgers open.
+
+Failure modes:
+• **CPU starve** — racks dark; Sparkworks hum while chat and transmute consoles stay dead.
+• **Memory starve** — nodes boot, handshakes flicker, disputed hauls bloom; Brii's Loreloom cannot prove truth it never held.
+• **Skewed fab** — too many Pulsecores, too few MoteBanks (or reverse) creates Single-Thread compute: looks online, fails under batch load.
+
+Guild doctrine: every Foundry Dynamo must site at least one Coreforge press and one Remembrane loom on separate fuel buses so a single FOMO spike cannot kill both fab lines.`,
   },
   {
     pageKey: `${GRID_POWER_ROOT}/netherlink`,
@@ -206,10 +244,12 @@ Heroic campaigns often start here: a Foundry Wright and a Tithe Warden racing a 
 
 Priority targets (raid AI fantasy):
 1. **Corestacks / Mega Plants** — densest Alchemica burn
-2. **Proof Halls (miners)** — FOMO heat signature
-3. **Callspires (RPC)** — killing RPCs freezes transmute without a full blackout
-4. **Lorelooms (indexers)** — destroy auditability; force Walkers into disputes
-5. **Caravans mid-blackout** — classic prey
+2. **Coreforges (CPU fab)** — glowing presses; kill Pulsecores and racks stay dark
+3. **Remembrane Mills (memory fab)** — cooler, but empty MoteBanks force Walk Ledgers
+4. **Proof Halls (miners)** — FOMO heat signature
+5. **Callspires (RPC)** — killing RPCs freezes transmute without a full blackout
+6. **Lorelooms (indexers)** — destroy auditability; force Walkers into disputes
+7. **Caravans mid-blackout** — classic prey
 
 Other threats:
 • **Mesh pirates** — Gotchi freebooters who tap Netherlink to skim packet Alchemica
@@ -233,7 +273,7 @@ Defense patterns: Waall killboxes around plants, Black Holes as decoy plumes, KE
 Act beats:
 1. **Barrel Road** — Run a caravan; feel the tax of walking
 2. **First Sparkworks** — Build Tier-1 plant; power one Antenna; fail a transmute (no RPC)
-3. **Callspire Rising** — Stand up servers + RPC; ship a smol batch; celebrate; get raided
+3. **Callspire Rising** — Component run (Pulsecores + MoteBanks); stand up servers + RPC; ship a smol batch; celebrate; get raided
 4. **Indexer Truth** — After a disputed shipment, build a Loreloom; learn why proofs matter
 5. **Miner Quorum** — Proof Halls unlock larger batches; Spillover draws a serious Lickquidator
 6. **District Dynamo** — Tier-2/3 plants link parcels; Citaadel notices Grid independence
@@ -290,9 +330,13 @@ Vertical slice order: caravan tutorial → Sparkworks + failed transmute → RPC
 
 **Rex Spill** — Miner hall foreman. Burns FOMO Plasma like festival fireworks. Draws raids; claims the glow is free advertising for Tower killboxes.
 
+**Chipz of the Coreforge** — Pulsecore artisan. Speaks in clock rates and Guild honesty stamps. Will scrap an entire FOMO-rushed die batch rather than let Echo-9 install a lying brain. Secret: once bootlegged a Coreforge press for Open Steppe freebooters and still owes Nettle a tithe on the scrap.
+
+**Mnem of the Remembrane** — MoteBank miller. Measures FUD density by ear; hums KEK Vapor refresh rites that sound like bad stand-up. Argues that memory, not CPU, is the true haul — "Empty buffers make Walkers right."
+
 **Keeper Vael** — Citaadel Receiver. Controls inbound gate permissions. Isolationist pressure sits on their shoulders every Great Battle eve.
 
-**Gloam** — Beta Lickquidator scout that learned power-plant heat signatures. Not a hero — the recurring raid pressure with a name.`,
+**Gloam** — Beta Lickquidator scout that learned power-plant heat signatures — and now fabrication glow. Not a hero — the recurring raid pressure with a name.`,
   },
   {
     pageKey: `${GRID_POWER_ROOT}/linkers-vs-walkers`,
@@ -462,10 +506,29 @@ const LIGHT_THE_HAUL_CAMPAIGN_NODES = [
 
   chapter('callspire', LIGHT_THE_HAUL_ARC, 'Chapter 3 — Callspire Rising', 2),
   scene(
+    'component-run',
+    `${LIGHT_THE_HAUL_ARC}/callspire`,
+    'Component Run',
+    'Empty Rackhollow frames wait like cool tombs. Chipz refuses to install Haunthosts without Guild-stamped Pulsecores; Mnem will not ship MoteBanks until FUD density and KEK refresh pass the hum test. Wattz splits the fuel bus: ALPHA to the Coreforge, FUD to the Remembrane Mill.',
+    {
+      choices: [
+        { label: 'Prioritize Pulsecores', outcome: 'CPUs first; risk memory starve later' },
+        { label: 'Prioritize MoteBanks', outcome: 'Buffers first; racks boot slower' },
+        { label: 'Balance both fab lines', outcome: 'Slower; Dual-Thread compute ready' },
+      ],
+      roles: [
+        { player: 'Chipz of the Coreforge', action: 'Stamp Pulsecores' },
+        { player: 'Mnem of the Remembrane', action: 'Weave MoteBanks' },
+        { player: 'Wattz the Foundry Wright', action: 'Split fuel buses' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
     'rackhollow',
     `${LIGHT_THE_HAUL_ARC}/callspire`,
     'Raise the Rackhollow',
-    'Haunthost servers fill a cooled lodge wing. KEK Vapor vents smell like festival fog. Brii refuses to celebrate until an indexer exists — but Echo-9 needs the racks first.',
+    'Pulsecores seat. MoteBanks click into transmute staging trays. Haunthost servers fill a cooled lodge wing. KEK Vapor vents smell like festival fog. Brii refuses to celebrate until an indexer exists — but Echo-9 needs the racks first.',
     {
       choices: [
         { label: 'Stand up Callspire RPC now', outcome: 'Attempt first transmute' },
@@ -474,26 +537,29 @@ const LIGHT_THE_HAUL_CAMPAIGN_NODES = [
       roles: [
         { player: 'Echo-9', action: 'Install Callspire' },
         { player: 'Loommother Brii', action: 'Demand indexer path' },
+        { player: 'Chipz of the Coreforge', action: 'Certify Pulsecore honesty stamps' },
       ],
-      order: 0,
+      order: 1,
     },
   ),
   scene(
     'first-transmute',
     `${LIGHT_THE_HAUL_ARC}/callspire`,
     'First Transmute Pulse',
-    'ALPHA-honest proofs clear. A smol Reservoir batch vanishes into Netherlink. Citaadel credits ping. Tithe bit flips automatically. Pip stares at empty barrels like someone stole a religion.',
+    'ALPHA-honest proofs clear. A smol Reservoir batch vanishes into Netherlink. Citaadel credits ping. Tithe bit flips automatically. Pip stares at empty barrels like someone stole a religion. Mnem watches MoteBank watermarks — if buffers had been thin, this would already be a dispute.',
     {
       choices: [
         { label: 'Throw a Lodge party', outcome: 'Morale up; Spillover scent up' },
         { label: 'Immediately fortify the plant', outcome: 'Prepare for Gloam' },
+        { label: 'Fortify Coreforge and Remembrane first', outcome: 'Protect fab bottleneck' },
       ],
       roles: [
         { player: 'Echo-9', action: 'Finalize transmute handshake' },
         { player: 'Nettle the Tithe Warden', action: 'Verify Portal share' },
         { player: 'Pip the Barrel-Walker', action: 'Question the empty barrels' },
+        { player: 'Mnem of the Remembrane', action: 'Check buffer watermarks' },
       ],
-      order: 1,
+      order: 2,
     },
   ),
 

@@ -142,7 +142,7 @@ See [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md) and can
 ### Lighting the Grid (Power → Netherlink → Transmute)
 - **Problem:** Outer Grid Alchemica must reach the Citaadel; caravans walk it through Lickquidator country
 - **Solution:** Refine Alchemica into fuel → power plants (Sparkworks → Corestack) → compute stack → **Netherlink** internet → **transmute** packets to Citaadel receivers
-- **Compute stack:** Data centers, block miners, RPC nodes, indexers, servers
+- **Compute stack:** Coreforges (Pulsecores/CPU) + Remembrane Mills (MoteBanks/memory) → data centers, servers, RPCs, indexers, miners
 - **Fail state:** Blackout → open the Walk Ledger → caravan home
 - **Tithe:** Carved at transmute time for digital shipping
 - Full lore: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md) · seed `scripts/grid-power-canon-data.cjs`
