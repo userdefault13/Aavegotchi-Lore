@@ -196,6 +196,7 @@ The canonical Aavegotchi lore is already implemented in:
 ✅ Burn Address, Alchemica, Spirit Bonding concepts  
 ✅ Gotchus Alchemica ecology + Foundry / factory-loop framing (`alchemica-canon-data.cjs`)  
 ✅ Lighting the Grid — power plants, compute stack, Netherlink transmute vs caravan (`grid-power-canon-data.cjs`)  
+✅ Light the Haul Tome campaign (9 chapters) + haul roles / Linkers vs Walkers  
 
 ### Expansion Opportunities
 

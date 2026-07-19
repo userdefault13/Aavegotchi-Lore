@@ -146,6 +146,7 @@ See [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md) and can
 - **Fail state:** Blackout → open the Walk Ledger → caravan home
 - **Tithe:** Carved at transmute time for digital shipping
 - Full lore: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md) · seed `scripts/grid-power-canon-data.cjs`
+- **Tome arc:** Light the Haul (Barrel Road → Stable Haul) with Linker/Walker tension
 
 ### Alchemical Channeling
 - Ritual that summons Alchemica near a Gotchi

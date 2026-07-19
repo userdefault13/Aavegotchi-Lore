@@ -283,9 +283,11 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
 - [x] **Design doc** (`docs/grid-power-transmute-lore.md`)
 - [x] **Fuel grades + plant tiers + compute stack** (lore framing)
 - [x] **Light the Haul campaign beats** (seeded outline)
-- [ ] **Tome campaign nodes** for Light the Haul
+- [x] **Tome campaign nodes** for Light the Haul (`LIGHT_THE_HAUL_CAMPAIGN_NODES`)
+- [x] **Named haul roles** (Pip, Wattz, Nettle, Echo-9, Brii, Rex Spill, Vael, Gloam)
+- [x] **Linkers vs Walkers** faction page
 - [ ] **Vertical slice:** caravan → Sparkworks → RPC transmute → blackout walk
-- [ ] **Receiver politics** (Citaadel factions throttling inbound transmute)
+- [ ] **Receiver politics** playable sub-branch polish
 - [ ] **Corestack containment rules** — DAO review
 
 ### Technology & Innovation

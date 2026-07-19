@@ -103,19 +103,33 @@ Secondary objectives:
 
 ## Campaign: Light the Haul
 
-See canon page `.../campaign-arc`. Short form:
+**Tome seed:** `LIGHT_THE_HAUL_CAMPAIGN_NODES` in `scripts/grid-power-canon-data.cjs` (wired via `seed-canon-campaign.mjs`)
 
-Caravan pain → first plant → failed transmute → RPC success → raid → indexer → miners → mega power → optional Corestack → blackout march → receiver politics → stable haul.
+| Chapter | Beats |
+|---------|--------|
+| 1 Barrel Road | Claim edge parcel → Defi Desert toll → gate delivery |
+| 2 First Sparkworks | Fuel grades → plant online → failed transmute (no RPC) |
+| 3 Callspire Rising | Rackhollow → first successful transmute |
+| 4 Raid Scent | Gloam raid → disputed shipment → indexer need |
+| 5 Miner Quorum & Dynamo | Proof Halls → Citaadel notices Grid independence |
+| 6 Corestack Gambit | License vs freeboot → containment night |
+| 7 Blackout March | Mesh dies → march or mend |
+| 8 Receiver Gate | Citaadel / DAO vote on inbound transmute |
+| 9 Stable Haul | Tithe-sustain victory check + epilogue |
+
+**Named roles:** Pip, Wattz, Nettle, Echo-9, Loommother Brii, Rex Spill, Keeper Vael, Gloam — see lore page `.../roles`.
 
 ---
 
 ## Vertical Slice (Build Order)
 
-1. Tutorial caravan (teach Walk Ledger)
-2. Sparkworks + Antenna (power, still no ship)
-3. Servers + RPC (first successful smol transmute)
-4. Lickquidator raid on plant Spillover
-5. Blackout + emergency caravan encore
+Playable prototype order (maps to Chapters 1–4 + 7):
+
+1. Tutorial caravan (teach Walk Ledger) — Ch.1
+2. Sparkworks + Antenna (power, still no ship) — Ch.2
+3. Servers + RPC (first successful smol transmute) — Ch.3
+4. Lickquidator raid on plant Spillover — Ch.4
+5. Blackout + emergency caravan encore — Ch.7
 
 ---
 

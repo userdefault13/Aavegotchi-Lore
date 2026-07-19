@@ -267,8 +267,55 @@ Lose condition: **Chronic blackout + caravan attrition empties Portal stores bef
 
 Vertical slice order: caravan tutorial → Sparkworks + failed transmute → RPC success → first raid on the plant → blackout caravan encore.`,
   },
+  {
+    pageKey: `${GRID_POWER_ROOT}/roles`,
+    title: 'Roles of the Haul',
+    templateId: 'default',
+    parentKey: GRID_POWER_ROOT,
+    tags: [
+      { label: 'grid-power', color: 'cyan' },
+      { label: 'character', color: 'purple' },
+    ],
+    content: `Lighting the Grid is a crew sport. Named role archetypes for stories and Tome play:
+
+**Pip the Barrel-Walker** — Caravan lead who still marks every route in chalk. Distrusts packets; will escort a Walk Ledger run through the Defi Desert without complaint. Secret: once lost a whole ALPHA cart to a "friendly" mesh pirate who promised a shortcut Callspire.
+
+**Wattz the Foundry Wright** — Installation engineer obsessed with fuel ratios. Speaks in Crucible temperatures. Believes a Corestack is inevitable; argues with Tithe Wardens about Portal share on Mega Plant burn.
+
+**Nettle the Tithe Warden** — Counts what the Portal is owed. Neutral between Linkers and Walkers so long as tithe clears. Can freeze a transmute batch mid-rite if the tithe bit is unset — the most hated power on the Grid.
+
+**Echo-9 the Callspire Tender** — RPC operator. Lives on ALPHA Flux tea. Motto: "If the node lies, the haul dies." First Gotchi to complete a Citaadel receiver handshake from the Open Steppe.
+
+**Loommother Brii** — Indexer guild elder. Treats Lorelooms like sacred libraries. Will halt a celebration over a successful transmute until the event log is queryable.
+
+**Rex Spill** — Miner hall foreman. Burns FOMO Plasma like festival fireworks. Draws raids; claims the glow is free advertising for Tower killboxes.
+
+**Keeper Vael** — Citaadel Receiver. Controls inbound gate permissions. Isolationist pressure sits on their shoulders every Great Battle eve.
+
+**Gloam** — Beta Lickquidator scout that learned power-plant heat signatures. Not a hero — the recurring raid pressure with a name.`,
+  },
+  {
+    pageKey: `${GRID_POWER_ROOT}/linkers-vs-walkers`,
+    title: 'Linkers vs Walkers',
+    templateId: 'default',
+    parentKey: GRID_POWER_ROOT,
+    tags: [
+      { label: 'grid-power', color: 'cyan' },
+      { label: 'faction', color: 'purple' },
+    ],
+    content: `Two creeds split every Grid settlement that tries to Light the Haul.
+
+**Linkers** argue that caravans are a dead end — Lickquidators read Spillover roads better than maps. Only Netherlink scale can feed the Portal before the next Force Field drop. They push plant tiers, miner quorums, and Corestack licenses.
+
+**Walkers** argue that packets lie, receivers close for politics, and a barrel on a ROFL-scouted path is honest yield. They keep Waall roads, rest posts, and Walk Ledgers current. Many are caravan veterans who watched the first Callspires desync a shipment into meme-static.
+
+**Tithe Wardens** referee. Guild law: every Foundry must fund both a transmute bus AND a caravan reserve. Settlements that abandon one path are marked **Single-Thread** — high efficiency, high extinction risk.
+
+Story fuel: romance, rival crews, and DAO votes over whether Corestacks are freedom or a dinner bell for AGITHE.`,
+  },
 ];
 
+/** Optional landmark flavor tied to Grid Power framing. */
 const GRID_POWER_LANDMARK_BLURBS = {
   'open-steppe':
     'Act 2 frontier where Netherlink relays are thinnest — Sparkworks flicker at parcel edges and caravans still outnumber Callspires.',
@@ -278,8 +325,389 @@ const GRID_POWER_LANDMARK_BLURBS = {
     'Forward bases that now target Mega Plants and Corestacks — Lickquidators learned glowing power tastes like concentrated yield.',
 };
 
+/* -------------------------------------------------------------------------- */
+/* Light the Haul — Tome campaign nodes                                       */
+/* -------------------------------------------------------------------------- */
+
+function scene(id, parentKey, title, content, extras = {}) {
+  return {
+    nodeKey: parentKey ? `${parentKey}/${id}` : id,
+    parentKey: parentKey || null,
+    type: extras.type || 'scene',
+    title,
+    content,
+    choices: extras.choices || [],
+    roles: extras.roles || [],
+    order: extras.order ?? 0,
+    branchIndex: extras.branchIndex ?? 0,
+  };
+}
+
+function chapter(id, parentKey, title, order) {
+  return {
+    nodeKey: parentKey ? `${parentKey}/${id}` : id,
+    parentKey: parentKey || null,
+    type: 'chapter',
+    title,
+    content: '',
+    choices: [],
+    roles: [],
+    order,
+    branchIndex: 0,
+  };
+}
+
+const LIGHT_THE_HAUL_ARC = 'light-the-haul';
+
+const LIGHT_THE_HAUL_CAMPAIGN_NODES = [
+  {
+    nodeKey: LIGHT_THE_HAUL_ARC,
+    parentKey: null,
+    type: 'arc',
+    title: 'Light the Haul',
+    content:
+      'Grid Power campaign — refine Alchemica into plants and compute, light the Netherlink, transmute yield to the Citaadel, or walk it home when the mesh dies.',
+    choices: [],
+    roles: [],
+    order: 0,
+    branchIndex: 0,
+  },
+
+  chapter('barrel-road', LIGHT_THE_HAUL_ARC, 'Chapter 1 — Barrel Road', 0),
+  scene(
+    'claim-the-edge',
+    `${LIGHT_THE_HAUL_ARC}/barrel-road`,
+    'Claim the Edge Parcel',
+    'Your crew holds a Grid parcel far from Citaadel gates. Reservoirs fill. The Walk Ledger says six hard watches to the nearest receiver — through Defi Desert scent trails Gloam already knows.',
+    {
+      choices: [
+        { label: 'Load the caravan', outcome: 'Begin Barrel Road' },
+        { label: 'Hoard and wait for a plant plan', outcome: 'Wattz drafts Sparkworks' },
+      ],
+      roles: [
+        { player: 'Pip the Barrel-Walker', action: 'Mark the chalk route' },
+        { player: 'Nettle the Tithe Warden', action: 'Weigh Portal share on barrels' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'desert-toll',
+    `${LIGHT_THE_HAUL_ARC}/barrel-road`,
+    'Defi Desert Toll',
+    'Spillover from a rushed FOMO haul paints the sand. Freebooters demand ALPHA toll for Waall-road access. Distant licking — Gloam is near.',
+    {
+      choices: [
+        { label: 'Pay the ALPHA toll', outcome: 'Road opens; tithe margin thins' },
+        { label: 'Detour with ROFL scouts', outcome: 'Slower; avoid freebooters; risk Gloam' },
+        { label: 'Fight for the road', outcome: 'Win path or lose barrels' },
+      ],
+      roles: [
+        { player: 'Pip the Barrel-Walker', action: 'Negotiate or fight' },
+        { player: 'ROFL Scout', action: 'Sniff alternate washes' },
+      ],
+      order: 1,
+    },
+  ),
+  scene(
+    'gate-delivery',
+    `${LIGHT_THE_HAUL_ARC}/barrel-road`,
+    'Citaadel Gate Delivery',
+    'Half a cart short, you reach Keeper Vael\'s receiver post on foot. Tithe is carved by hand. Vael notes: "Walkers feed us. Linkers promise us. Bring either — just bring it."',
+    {
+      choices: [
+        { label: 'Swear to light a Sparkworks', outcome: 'Chapter 2 unlocks' },
+        { label: 'Double down on caravan routes', outcome: 'Walker ending branch stays open' },
+      ],
+      roles: [
+        { player: 'Keeper Vael', action: 'Accept inbound Alchemica' },
+        { player: 'Nettle the Tithe Warden', action: 'Reconcile Walk Ledger' },
+      ],
+      order: 2,
+    },
+  ),
+
+  chapter('first-spark', LIGHT_THE_HAUL_ARC, 'Chapter 2 — First Sparkworks', 1),
+  scene(
+    'fuel-grades',
+    `${LIGHT_THE_HAUL_ARC}/first-spark`,
+    'Crucible Lessons',
+    'Wattz teaches fuel grades over a hot Crucible: FUD Slag for baseload, FOMO Plasma for spikes, ALPHA Flux for honest nodes, KEK Vapor so the mesh does not laugh itself apart.',
+    {
+      choices: [
+        { label: 'Prioritize FUD Slag stockpile', outcome: 'Stable brownout resistance' },
+        { label: 'Prioritize FOMO Plasma', outcome: 'Fast boot; higher Spillover scent' },
+      ],
+      roles: [{ player: 'Wattz the Foundry Wright', action: 'Tune the Crucible' }],
+      order: 0,
+    },
+  ),
+  scene(
+    'sparkworks-online',
+    `${LIGHT_THE_HAUL_ARC}/first-spark`,
+    'Sparkworks Online',
+    'Tier-1 Alchemica Power Plant hums. One Antenna lights. Chat works. Transmute console glows — then rejects the batch. Echo-9 shrugs: "No Callspire, no truth."',
+    {
+      choices: [
+        { label: 'Build servers and an RPC next', outcome: 'Chapter 3' },
+        { label: 'Overclock the Antenna anyway', outcome: 'Packet rain; learn the hard way' },
+      ],
+      roles: [
+        { player: 'Wattz the Foundry Wright', action: 'Bring Sparkworks online' },
+        { player: 'Echo-9', action: 'Explain RPC requirement' },
+      ],
+      order: 1,
+    },
+  ),
+
+  chapter('callspire', LIGHT_THE_HAUL_ARC, 'Chapter 3 — Callspire Rising', 2),
+  scene(
+    'rackhollow',
+    `${LIGHT_THE_HAUL_ARC}/callspire`,
+    'Raise the Rackhollow',
+    'Haunthost servers fill a cooled lodge wing. KEK Vapor vents smell like festival fog. Brii refuses to celebrate until an indexer exists — but Echo-9 needs the racks first.',
+    {
+      choices: [
+        { label: 'Stand up Callspire RPC now', outcome: 'Attempt first transmute' },
+        { label: 'Wait for Loommother Brii\'s Loreloom', outcome: 'Slower; audit-ready' },
+      ],
+      roles: [
+        { player: 'Echo-9', action: 'Install Callspire' },
+        { player: 'Loommother Brii', action: 'Demand indexer path' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'first-transmute',
+    `${LIGHT_THE_HAUL_ARC}/callspire`,
+    'First Transmute Pulse',
+    'ALPHA-honest proofs clear. A smol Reservoir batch vanishes into Netherlink. Citaadel credits ping. Tithe bit flips automatically. Pip stares at empty barrels like someone stole a religion.',
+    {
+      choices: [
+        { label: 'Throw a Lodge party', outcome: 'Morale up; Spillover scent up' },
+        { label: 'Immediately fortify the plant', outcome: 'Prepare for Gloam' },
+      ],
+      roles: [
+        { player: 'Echo-9', action: 'Finalize transmute handshake' },
+        { player: 'Nettle the Tithe Warden', action: 'Verify Portal share' },
+        { player: 'Pip the Barrel-Walker', action: 'Question the empty barrels' },
+      ],
+      order: 1,
+    },
+  ),
+
+  chapter('raid-scent', LIGHT_THE_HAUL_ARC, 'Chapter 4 — Raid Scent', 3),
+  scene(
+    'gloam-arrives',
+    `${LIGHT_THE_HAUL_ARC}/raid-scent`,
+    'Gloam at the Plume',
+    'Gloam leads a lick-pack toward Sparkworks Spillover. Rex Spill wants more miners "to finish bigger batches." Wattz wants Waalls. Someone will be wrong in public.',
+    {
+      choices: [
+        { label: 'Build Waall killbox', outcome: 'Defense first' },
+        { label: 'Drop a Black Hole decoy plume', outcome: 'Bait Gloam off-parcel' },
+        { label: 'Add miners during the raid', outcome: 'Greedy; high risk reward' },
+      ],
+      roles: [
+        { player: 'Gloam', action: 'Raid the plant heat' },
+        { player: 'Rex Spill', action: 'Argue for Proof Halls' },
+        { player: 'Wattz the Foundry Wright', action: 'Hold the Crucible line' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'aftermath-audit',
+    `${LIGHT_THE_HAUL_ARC}/raid-scent`,
+    'Aftermath Audit',
+    'A disputed shipment surfaces — Citaadel says short; Grid says full. Without a Loreloom, nobody can prove which Reservoir lied. Brii\'s silence is louder than Gloam.',
+    {
+      choices: [
+        { label: 'Build the Loreloom indexer', outcome: 'Chapter 5' },
+        { label: 'Send a caravan to reconcile by foot', outcome: 'Walker pride; slow truth' },
+      ],
+      roles: [{ player: 'Loommother Brii', action: 'Explain orphan events' }],
+      order: 1,
+    },
+  ),
+
+  chapter('quorum', LIGHT_THE_HAUL_ARC, 'Chapter 5 — Miner Quorum & Dynamo', 4),
+  scene(
+    'proof-halls',
+    `${LIGHT_THE_HAUL_ARC}/quorum`,
+    'Proof Halls Online',
+    'Rex Spill\'s miners seal parcel blocks fast enough for larger transmute batches. FOMO Plasma burn paints the night. Antenna bus links a neighbor parcel — Foundry Dynamo tier.',
+    {
+      choices: [
+        { label: 'Link parcels into a Dynamo', outcome: 'Regional power; shared raid scent' },
+        { label: 'Stay islanded on Sparkworks', outcome: 'Safer; smaller haul cap' },
+      ],
+      roles: [
+        { player: 'Rex Spill', action: 'Spin up Proof Halls' },
+        { player: 'Wattz the Foundry Wright', action: 'Balance fuel buses' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'citaadel-notices',
+    `${LIGHT_THE_HAUL_ARC}/quorum`,
+    'Citaadel Notices',
+    'Keeper Vael reports Grid independence chatter. Isolationists want receiver throttles. Integrationists want more Linkers. Nettle only asks whether tithe charts bend up.',
+    {
+      choices: [
+        { label: 'Lobby to keep receivers open', outcome: 'Political quest' },
+        { label: 'Stockpile for blackout caravans', outcome: 'Walker insurance' },
+        { label: 'Propose a Netherforge Mega Plant', outcome: 'Chapter 6 pressure' },
+      ],
+      roles: [
+        { player: 'Keeper Vael', action: 'Present faction pressures' },
+        { player: 'Nettle the Tithe Warden', action: 'Show tithe charts' },
+      ],
+      order: 1,
+    },
+  ),
+
+  chapter('corestack', LIGHT_THE_HAUL_ARC, 'Chapter 6 — Corestack Gambit', 5),
+  scene(
+    'license-or-freeboot',
+    `${LIGHT_THE_HAUL_ARC}/corestack`,
+    'License or Freeboot',
+    'A Corestack blueprint circulates — nuclear-scale Alchemica reactor. Guild wants a license and higher Portal share. Freebooters say build it dark in the Open Steppe.',
+    {
+      choices: [
+        { label: 'Seek Guild license', outcome: 'Slower; legitimized; tithe hike' },
+        { label: 'Freeboot the Corestack', outcome: 'Fast; illegal; AGITHE-dinner-bell rumors' },
+        { label: 'Refuse Corestack; stay Netherforge', outcome: 'Skip to blackout with lower power' },
+      ],
+      roles: [
+        { player: 'Wattz the Foundry Wright', action: 'Argue engineering' },
+        { player: 'Nettle the Tithe Warden', action: 'Price the tithe hike' },
+        { player: 'Pip the Barrel-Walker', action: 'Demand a Walk Ledger for the Corestack' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'containment',
+    `${LIGHT_THE_HAUL_ARC}/corestack`,
+    'Containment Night',
+    'If built: the Corestack lights a district Netherlink — or scrams into silence. Neighbor Lodges cheer or evacuate. Gloam\'s pack changes course toward the new sun.',
+    {
+      choices: [
+        { label: 'Hold containment', outcome: 'District mesh stable' },
+        { label: 'Scram and dump to caravans', outcome: 'Survive; lose face' },
+      ],
+      roles: [
+        { player: 'Wattz the Foundry Wright', action: 'Ride the reaction' },
+        { player: 'Gloam', action: 'Retarget the glow' },
+      ],
+      order: 1,
+      branchIndex: 0,
+    },
+  ),
+
+  chapter('blackout', LIGHT_THE_HAUL_ARC, 'Chapter 7 — Blackout March', 6),
+  scene(
+    'mesh-dies',
+    `${LIGHT_THE_HAUL_ARC}/blackout`,
+    'The Mesh Dies',
+    'Great Battle eve. Power diverts to Towers. Isolationists shutter receivers. Gloam chews a relay. Netherlink goes dark mid-batch. Packet rain. Walk Ledger opens itself.',
+    {
+      choices: [
+        { label: 'March the caravan tonight', outcome: 'Classic haul under fire' },
+        { label: 'Repair one Callspire first', outcome: 'Race the clock; split the crew' },
+      ],
+      roles: [
+        { player: 'Pip the Barrel-Walker', action: 'Open Walk Ledger' },
+        { player: 'Echo-9', action: 'Attempt emergency RPC repair' },
+        { player: 'Keeper Vael', action: 'Report receiver shutter' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'march-or-mend',
+    `${LIGHT_THE_HAUL_ARC}/blackout`,
+    'March or Mend',
+    'Two crews: barrels toward Citaadel, tools toward the broken Callspire. Success is partial by nature — some motes walk, some rematerialize if Echo-9 lands a handshake before dawn.',
+    {
+      choices: [
+        { label: 'Prioritize barrels', outcome: 'Walker victory flavor' },
+        { label: 'Prioritize repair', outcome: 'Linker victory flavor' },
+        { label: 'Split evenly', outcome: 'Bittersweet both-path ending setup' },
+      ],
+      roles: [
+        { player: 'Pip the Barrel-Walker', action: 'Lead the march' },
+        { player: 'Echo-9', action: 'Re-light Callspire' },
+        { player: 'Nettle the Tithe Warden', action: 'Track both ledgers' },
+      ],
+      order: 1,
+    },
+  ),
+
+  chapter('receiver-gate', LIGHT_THE_HAUL_ARC, 'Chapter 8 — Receiver Gate', 7),
+  scene(
+    'citaadel-vote',
+    `${LIGHT_THE_HAUL_ARC}/receiver-gate`,
+    'Citaadel Receiver Vote',
+    'DAO-flavored council: keep Grid transmute open, throttle it, or demand Corestack bans. Linkers and Walkers lobby. Tithe charts are the only bilingual slides in the room.',
+    {
+      choices: [
+        { label: 'Open receivers wide', outcome: 'Grid boom; raid pressure rises' },
+        { label: 'Throttle to tithe-only bursts', outcome: 'Stable but capped' },
+        { label: 'Close digital; mandate caravans', outcome: 'Walker doctrine wins politically' },
+      ],
+      roles: [
+        { player: 'Keeper Vael', action: 'Chair the gate vote' },
+        { player: 'Nettle the Tithe Warden', action: 'Present tithe evidence' },
+        { player: 'Wattz the Foundry Wright', action: 'Lobby for Linkers' },
+        { player: 'Pip the Barrel-Walker', action: 'Lobby for Walkers' },
+      ],
+      order: 0,
+    },
+  ),
+
+  chapter('stable-haul', LIGHT_THE_HAUL_ARC, 'Chapter 9 — Stable Haul', 8),
+  scene(
+    'tithe-sustain',
+    `${LIGHT_THE_HAUL_ARC}/stable-haul`,
+    'Tithe-Sustain Cycles',
+    'Victory check: N consecutive cycles of Citaadel credits via Netherlink at Portal-sustain rate — Walk Ledger unused except as drill. Or: chronic blackout and empty Portal stores before battle.',
+    {
+      choices: [
+        { label: 'Declare Stable Haul', outcome: 'Arc victory — Linkers vindicated' },
+        { label: 'Admit Single-Thread failure', outcome: 'Rebuild with dual-path Guild law' },
+        { label: 'Embrace caravan primacy', outcome: 'Walker ending — mesh as backup only' },
+      ],
+      roles: [
+        { player: 'Nettle the Tithe Warden', action: 'Certify the charts' },
+        { player: 'Keeper Vael', action: 'Accept or refuse the declaration' },
+      ],
+      order: 0,
+    },
+  ),
+  scene(
+    'epilogue-glow',
+    `${LIGHT_THE_HAUL_ARC}/stable-haul`,
+    'Epilogue — Glow on the Grid',
+    'From Citaadel walls, Sparkworks and Dynamos look like a second starfield. Pip still chalks a road. Echo-9 still hates lying nodes. Gloam still hungers. The Haul is never finished — only lit well enough for tonight.',
+    {
+      choices: [
+        { label: 'Plan Act II Open Steppe relays', outcome: 'Sequel hook' },
+        { label: 'Prepare the next Great Battle', outcome: 'Return to Hero Protocol pressure' },
+      ],
+      roles: [{ player: 'Loremaster', action: 'Close the arc' }],
+      order: 1,
+    },
+  ),
+];
+
 module.exports = {
   GRID_POWER_ROOT,
   GRID_POWER_PAGES,
   GRID_POWER_LANDMARK_BLURBS,
+  LIGHT_THE_HAUL_ARC,
+  LIGHT_THE_HAUL_CAMPAIGN_NODES,
 };
