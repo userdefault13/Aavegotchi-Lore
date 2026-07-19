@@ -121,13 +121,15 @@ Survey — Reveal deposit richness on a Parcel (Chainlink VRF / surveying fantas
 Channel — Spend Kinship at an Aaltar to wake veins (manual kickstart).
 Extract — Place Haarvesters on belts of yield; each type prefers matching Alchemica temperament.
 Store — Reservoirs as chests/tanks; overflow becomes map Spillover (the "pollution" tell that attracts Lickquidators).
-Refine — Intermediate craft nodes combine pairs (e.g. FUD+FOMO slurry, ALPHA catalysts) before full Installations.
+Refine — Intermediate craft nodes combine pairs (e.g. FUD+FOMO slurry, ALPHA catalysts) before full Installations — and fuel grades for power plants.
 Craft — Spend refined Alchemica (+ GHST on the Baazaar fantasy) to build Waalls, Towers, Lodges, Black Holes.
 Defend — Lickquidators path toward spilled motes and Portal-rich targets; Towers and Black Holes reshape threat.
 Tithe — A cut of throughput feeds the Great Portal; starving tithe weakens the Force Field or triggers raids.
 Replenish — After Great Battles, parcels refill — the campaign reset that keeps the factory forever unfinished.
 
-Victory is not "launch a rocket." Victory is surviving nine Force Field drops with your Foundry still feeding the Portal.`,
+Extended logistics branch (see Grid Power pages): REFINE → POWER → COMPUTE → NETHERLINK → TRANSMUTE → CITADEL — or else WALK the caravan home.
+
+Victory is not "launch a rocket." Victory is surviving nine Force Field drops with your Foundry still feeding the Portal — digitally when the Grid is lit, on foot when it is not.`,
   },
   {
     pageKey: `${ALCHEMICA_ROOT}/machines`,

@@ -409,6 +409,47 @@ See `docs/alchemica-factory-brainstorm.md` for design pillars and vertical-slice
 
 ---
 
+## Lighting the Grid (Transmute Logistics)
+
+```
+  GRID PARCEL FOUNDATION
+           |
+     REFINE FUEL GRADES
+    FUD Slag / FOMO Plasma
+    ALPHA Flux / KEK Vapor
+           |
+           ↓
+   POWER PLANTS (tiers)
+   Sparkworks → Dynamo
+   → Netherforge → Corestack
+           |
+           ↓
+      COMPUTE STACK
+   ┌───────┼───────┬────────┬─────────┐
+   ↓       ↓       ↓        ↓         ↓
+ Servers  RPC   Indexers  Miners   Data Centers
+(Haunthost)(Callspire)(Loreloom)(Proof Hall)(Rackhollow)
+           |
+           ↓
+      NETHERLINK MESH
+    (internet on the Grid)
+           |
+      ┌────┴────┐
+      ↓         ↓
+  TRANSMUTE   BLACKOUT
+  (packets)   (Walk Ledger)
+      ↓         ↓
+  CITADEL    CARAVAN
+  receivers  through raids
+      ↓         ↓
+   PORTAL TITHE (either path, if it arrives)
+```
+
+Main objective: keep Netherlink green so Alchemica ships home without walking.  
+See `docs/grid-power-transmute-lore.md`.
+
+---
+
 ## Character Archetypes Web
 
 ```

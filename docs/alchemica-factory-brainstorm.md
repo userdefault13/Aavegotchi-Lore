@@ -164,13 +164,27 @@ Map beats 7–8 onto Hero Protocol / Great Battle cadence.
 
 ---
 
+## Extended Branch: Lighting the Grid
+
+Refined Alchemica also fuels **power plants and compute** so the Grid can run a Netherlink and transmute shipments to the Citaadel (else caravans walk).
+
+See **[grid-power-transmute-lore.md](./grid-power-transmute-lore.md)** and seed `scripts/grid-power-canon-data.cjs`.
+
+```
+STORE → REFINE → POWER → COMPUTE → LINK → TRANSMUTE → CITADEL
+                         └──── blackout ────→ WALK CARAVAN
+```
+
+---
+
 ## Suggested Next Build Steps
 
 1. Seed + review Alchemica ecology pages in canon world
 2. Draft recipe spreadsheet: 12 starter Installation recipes with 2–4 element costs
 3. Prototype Parcel Foundry vertical slice (place → extract → spill → raid scout)
 4. Write Tome one-shot: Alchemical Guild initiation
-5. Pass through Aarcade / Gotchiverse Lite constraints (Phaser, low-tech, DAO governable)
+5. Prototype Lighting the Grid slice: caravan → Sparkworks → RPC transmute → blackout walk
+6. Pass through Aarcade / Gotchiverse Lite constraints (Phaser, low-tech, DAO governable)
 
 ---
 

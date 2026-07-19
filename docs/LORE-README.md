@@ -94,6 +94,15 @@ Design doc covering:
 
 **Use this when:** Expanding Alchemica lore or prototyping automation / factory gameplay.
 
+### 5b. ⚡ [grid-power-transmute-lore.md](./grid-power-transmute-lore.md)
+**Best for:** Grid logistics, power plants, compute stack, digital Alchemica shipping
+
+Lore for **Lighting the Grid**: refine Alchemica to fuel plants and compute (data centers, miners, RPCs, indexers, servers), raise Netherlink internet, transmute shipments to the Citaadel — or walk caravans when blacked out.
+
+**Canon seed:** `/workspace/scripts/grid-power-canon-data.cjs`
+
+**Use this when:** Designing frontier logistics, power progression, or transmute vs caravan gameplay.
+
 ---
 
 ### 6. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
@@ -153,6 +162,10 @@ Feature parity tracking between systems.
 - Seed: `/workspace/scripts/alchemica-canon-data.cjs`
 - Design: [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md)
 
+### 12. ⚡ Grid Power / Netherlink (seed + design)
+- Seed: `/workspace/scripts/grid-power-canon-data.cjs`
+- Design: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md)
+
 ---
 
 ## How the Lore System Works
@@ -182,6 +195,7 @@ The canonical Aavegotchi lore is already implemented in:
 ✅ ROFLs and companion lore  
 ✅ Burn Address, Alchemica, Spirit Bonding concepts  
 ✅ Gotchus Alchemica ecology + Foundry / factory-loop framing (`alchemica-canon-data.cjs`)  
+✅ Lighting the Grid — power plants, compute stack, Netherlink transmute vs caravan (`grid-power-canon-data.cjs`)  
 
 ### Expansion Opportunities
 
@@ -195,6 +209,7 @@ The system is ready for community-driven expansion in areas like:
 - Technology evolution and discoveries
 - Mysteries and long-term plot threads
 - Parcel Foundry vertical slice (recipes, mote-stream UX, raid cadence)
+- Light the Haul Tome campaign + Corestack / receiver politics
 
 ---
 

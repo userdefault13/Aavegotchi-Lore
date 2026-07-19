@@ -17,6 +17,7 @@
 | 6️⃣ | [**lore-roadmap.md**](./lore-roadmap.md) | 150+ development tasks |
 | 7️⃣ | [**LORE-README.md**](./LORE-README.md) | Master navigation hub |
 | 8️⃣ | [**alchemica-factory-brainstorm.md**](./alchemica-factory-brainstorm.md) | Alchemica economy + Factorio-like Foundry design |
+| 9️⃣ | [**grid-power-transmute-lore.md**](./grid-power-transmute-lore.md) | Power plants, Netherlink, transmute vs caravan haul |
 
 **Total:** ~120K words of comprehensive documentation
 

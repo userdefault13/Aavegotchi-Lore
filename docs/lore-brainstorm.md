@@ -29,6 +29,13 @@ Detailed ecology + Factorio-like gameplay framing lives in:
 
 Thesis: Parcel = factory floor, Spillover = pollution, Lickquidators = biters, Portal tithe = long-term sink, Great Battles = scheduled mega-raids with vein replenish.
 
+### Lighting the Grid (active expansion)
+Power + compute logistics for digital Alchemica shipping:
+- `/workspace/docs/grid-power-transmute-lore.md`
+- `/workspace/scripts/grid-power-canon-data.cjs`
+
+Thesis: Refine Alchemica → plants (to nuclear-scale Corestacks) → data centers / miners / RPCs / indexers / servers → Netherlink → transmute to Citaadel. Blackout = walk the caravan.
+
 ---
 
 ## 2. Factions & Social Structure (EXPANSION IDEAS)

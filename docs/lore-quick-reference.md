@@ -139,6 +139,14 @@ A condensed cheat sheet for the most essential Aavegotchi worldbuilding elements
 `Survey → Channel → Extract → Store → Refine → Craft → Defend → Tithe → Replenish`  
 See [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md) and canon pages under `gameplay/farming-alchemica/*`.
 
+### Lighting the Grid (Power → Netherlink → Transmute)
+- **Problem:** Outer Grid Alchemica must reach the Citaadel; caravans walk it through Lickquidator country
+- **Solution:** Refine Alchemica into fuel → power plants (Sparkworks → Corestack) → compute stack → **Netherlink** internet → **transmute** packets to Citaadel receivers
+- **Compute stack:** Data centers, block miners, RPC nodes, indexers, servers
+- **Fail state:** Blackout → open the Walk Ledger → caravan home
+- **Tithe:** Carved at transmute time for digital shipping
+- Full lore: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md) · seed `scripts/grid-power-canon-data.cjs`
+
 ### Alchemical Channeling
 - Ritual that summons Alchemica near a Gotchi
 - Core gameplay and spiritual practice

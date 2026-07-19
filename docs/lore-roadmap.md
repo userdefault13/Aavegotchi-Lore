@@ -277,6 +277,17 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
 - [ ] **Tome one-shot:** Alchemical Guild initiation ("Foundry of the Four")
 - [ ] **Guild intermediate machines** (Crucible / Loom / Kiln) — DAO review
 
+### Lighting the Grid (Power → Transmute)
+
+- [x] **Grid Power canon pages** (`scripts/grid-power-canon-data.cjs`)
+- [x] **Design doc** (`docs/grid-power-transmute-lore.md`)
+- [x] **Fuel grades + plant tiers + compute stack** (lore framing)
+- [x] **Light the Haul campaign beats** (seeded outline)
+- [ ] **Tome campaign nodes** for Light the Haul
+- [ ] **Vertical slice:** caravan → Sparkworks → RPC transmute → blackout walk
+- [ ] **Receiver politics** (Citaadel factions throttling inbound transmute)
+- [ ] **Corestack containment rules** — DAO review
+
 ### Technology & Innovation
 
 - [ ] **Ancient Tech (Pre-Aadept)**
