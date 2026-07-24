@@ -6,3 +6,6 @@ api/node_modules
 public/uploads/*
 !public/uploads/.gitkeep
 .vercel
+
+# Retro Bowl Unity project (separate repo)
+retro-bowl-unity/
