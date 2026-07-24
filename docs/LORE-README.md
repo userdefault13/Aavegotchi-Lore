@@ -80,7 +80,32 @@ A comprehensive brainstorming document with expansion concepts:
 
 ---
 
-### 5. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
+### 5. ⚗️ [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md)
+**Best for:** Alchemica ecology, world-power economy, Factorio-like Foundry design
+
+Design doc covering:
+- Why Alchemica already maps to factory-game loops
+- Four-element temperaments (FUD / FOMO / ALPHA / KEK)
+- Installation → machine role mapping
+- Spillover-as-pollution threat model
+- Parcel Foundry vertical-slice recommendations
+
+**Canon seed:** `/workspace/scripts/alchemica-canon-data.cjs`
+
+**Use this when:** Expanding Alchemica lore or prototyping automation / factory gameplay.
+
+### 5b. ⚡ [grid-power-transmute-lore.md](./grid-power-transmute-lore.md)
+**Best for:** Grid logistics, power plants, compute stack, digital Alchemica shipping
+
+Lore for **Lighting the Grid**: refine Alchemica to fuel plants and compute (data centers, miners, RPCs, indexers, servers), raise Netherlink internet, transmute shipments to the Citaadel — or walk caravans when blacked out.
+
+**Canon seed:** `/workspace/scripts/grid-power-canon-data.cjs`
+
+**Use this when:** Designing frontier logistics, power progression, or transmute vs caravan gameplay.
+
+---
+
+### 6. 🦸 [captain-aave-brainstorm.md](./captain-aave-brainstorm.md)
 **Best for:** Character development, Captain Aave creation, hero design
 
 A comprehensive 6000+ word character brainstorm for Captain Aave:
@@ -103,7 +128,7 @@ Quick Reference: [captain-aave-quick-reference.md](./captain-aave-quick-referenc
 
 ## Other Documentation
 
-### 6. ✅ [lore-roadmap.md](./lore-roadmap.md)
+### 7. ✅ [lore-roadmap.md](./lore-roadmap.md)
 **Best for:** Project planning, tracking progress, prioritizing work
 
 A phased development checklist:
@@ -133,6 +158,14 @@ Phased rollout plan for Concierge sub-page integration.
 ### 10. 📊 [parity-matrix.md](./parity-matrix.md)
 Feature parity tracking between systems.
 
+### 11. ⚗️ Alchemica Foundry (seed + design)
+- Seed: `/workspace/scripts/alchemica-canon-data.cjs`
+- Design: [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md)
+
+### 12. ⚡ Grid Power / Netherlink (seed + design)
+- Seed: `/workspace/scripts/grid-power-canon-data.cjs`
+- Design: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md)
+
 ---
 
 ## How the Lore System Works
@@ -161,6 +194,9 @@ The canonical Aavegotchi lore is already implemented in:
 ✅ Post-Aadept era and The Chosen  
 ✅ ROFLs and companion lore  
 ✅ Burn Address, Alchemica, Spirit Bonding concepts  
+✅ Gotchus Alchemica ecology + Foundry / factory-loop framing (`alchemica-canon-data.cjs`)  
+✅ Lighting the Grid — power plants, compute stack, Netherlink transmute vs caravan (`grid-power-canon-data.cjs`)  
+✅ Light the Haul Tome campaign (9 chapters) + haul roles / Linkers vs Walkers  
 
 ### Expansion Opportunities
 
@@ -173,6 +209,8 @@ The system is ready for community-driven expansion in areas like:
 - Faction conflicts and alliances
 - Technology evolution and discoveries
 - Mysteries and long-term plot threads
+- Parcel Foundry vertical slice (recipes, mote-stream UX, raid cadence)
+- Light the Haul Tome campaign + Corestack / receiver politics
 
 ---
 

@@ -121,23 +121,38 @@ A condensed cheat sheet for the most essential Aavegotchi worldbuilding elements
 - Each can manifest in the other's realm via proxy
 - Symbiotic relationship, shared fate
 
-### Alchemica (Four Sacred Elements)
-1. **FUD** - Fear, Uncertainty, Doubt
-2. **FOMO** - Fear Of Missing Out
-3. **ALPHA** - Inside knowledge, advantage
-4. **KEK** - Laughter, memes, joy
+### Alchemica (Four Sacred Elements) — World Power / Economy
+1. **FUD** - Fear, Uncertainty, Doubt — dense, defensive, foundations / Waalls
+2. **FOMO** - Fear Of Missing Out — volatile, speeds extract, high Spillover risk
+3. **ALPHA** - Inside knowledge, advantage — rare catalysts, Aaltar / tech unlocks
+4. **KEK** - Laughter, memes, joy — social binders, Lodges, communal Channeling
 
 **Properties:**
-- Building blocks of Gotchiverse
+- Building blocks of Gotchiverse (land power; Spirit Force powers Gotchis)
 - Used to craft Installations and Tiles
 - Found by surveying REALM Parcels
-- Appears in Spillover events
+- Appears in Spillover events (factory "pollution" that attracts Lickquidators)
 - Evolved from decayed tokens in Burn Address
+- Great Portal takes a tithe — feeds Force Field readiness
+
+**Foundry framing (factory-game loop):**  
+`Survey → Channel → Extract → Store → Refine → Craft → Defend → Tithe → Replenish`  
+See [alchemica-factory-brainstorm.md](./alchemica-factory-brainstorm.md) and canon pages under `gameplay/farming-alchemica/*`.
+
+### Lighting the Grid (Power → Netherlink → Transmute)
+- **Problem:** Outer Grid Alchemica must reach the Citaadel; caravans walk it through Lickquidator country
+- **Solution:** Refine Alchemica into fuel → power plants (Sparkworks → Corestack) → compute stack → **Netherlink** internet → **transmute** packets to Citaadel receivers
+- **Compute stack:** Coreforges (Pulsecores/CPU) + Remembrane Mills (MoteBanks/memory) → data centers, servers, RPCs, indexers, miners
+- **Fail state:** Blackout → open the Walk Ledger → caravan home
+- **Tithe:** Carved at transmute time for digital shipping
+- Full lore: [grid-power-transmute-lore.md](./grid-power-transmute-lore.md) · seed `scripts/grid-power-canon-data.cjs`
+- **Tome arc:** Light the Haul (Barrel Road → Stable Haul) with Linker/Walker tension
 
 ### Alchemical Channeling
 - Ritual that summons Alchemica near a Gotchi
 - Core gameplay and spiritual practice
 - Honors Moona the Channeler (hypothetical Aadept)
+- Kinship cost = the "stamina" verb in Foundry mode
 
 ---
 

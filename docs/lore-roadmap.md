@@ -103,6 +103,7 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
   - [ ] Daily operations
   
 - [ ] **Alchemical Guild District** (Researchers)
+  - [x] Guild ranks + Foundry Doctrine (seeded in alchemica canon)
   - [ ] Laboratories and experiments
   - [ ] Leading scientists
   - [ ] Current projects
@@ -264,6 +265,31 @@ A prioritized checklist for expanding the gotchi-lore system with new content.
 ---
 
 ## Phase 5: Advanced Content 📚
+
+### Gotchus Alchemica Foundry (Factorio-like)
+
+- [x] **Alchemica ecology pages** (`scripts/alchemica-canon-data.cjs`)
+- [x] **Four-element temperaments** (FUD / FOMO / ALPHA / KEK design roles)
+- [x] **Foundry Doctrine + factory loop** (Spillover-as-pollution framing)
+- [x] **Design brainstorm** (`docs/alchemica-factory-brainstorm.md`)
+- [ ] **Starter recipe spreadsheet** (12 Installations, multi-element costs)
+- [ ] **Parcel Foundry vertical slice** (place → extract → spill → scout raid)
+- [ ] **Tome one-shot:** Alchemical Guild initiation ("Foundry of the Four")
+- [ ] **Guild intermediate machines** (Crucible / Loom / Kiln) — DAO review
+
+### Lighting the Grid (Power → Transmute)
+
+- [x] **Grid Power canon pages** (`scripts/grid-power-canon-data.cjs`)
+- [x] **Design doc** (`docs/grid-power-transmute-lore.md`)
+- [x] **Fuel grades + plant tiers + compute stack** (lore framing)
+- [x] **Light the Haul campaign beats** (seeded outline)
+- [x] **Tome campaign nodes** for Light the Haul (`LIGHT_THE_HAUL_CAMPAIGN_NODES`)
+- [x] **Named haul roles** (Pip, Wattz, Nettle, Echo-9, Brii, Rex Spill, Chipz, Mnem, Vael, Gloam)
+- [x] **Component makers** (Coreforge Pulsecores + Remembrane MoteBanks)
+- [x] **Linkers vs Walkers** faction page
+- [ ] **Vertical slice:** caravan → Sparkworks → RPC transmute → blackout walk
+- [ ] **Receiver politics** playable sub-branch polish
+- [ ] **Corestack containment rules** — DAO review
 
 ### Technology & Innovation
 

@@ -377,6 +377,87 @@ FUTURE ──┤
 
 ---
 
+## Alchemica Foundry Loop (Factory Mode)
+
+```
+ SURVEY          CHANNEL           EXTRACT
+ (veins)  →  (Aaltar/Kinship)  →  (Haarvesters)
+                                      |
+                                      ↓
+                                   STORE
+                                (Reservoirs)
+                                      |
+                         ┌────────────┼────────────┐
+                         ↓            ↓            ↓
+                      REFINE       SPILLOVER     TITHE
+                    (recipes)    (map motes)   (Portal)
+                         |            |            |
+                         ↓            ↓            ↓
+                       CRAFT     LICKQUIDATORS  FORCE FIELD
+                   (Installs)     (attracted)    readiness
+                         |            |
+                         └──── DEFEND ┘
+                                |
+                         GREAT BATTLE
+                         (Force Field drops)
+                                |
+                            REPLENISH
+                          (veins refill)
+```
+
+See `docs/alchemica-factory-brainstorm.md` for design pillars and vertical-slice plans.
+
+---
+
+## Lighting the Grid (Transmute Logistics)
+
+```
+  GRID PARCEL FOUNDATION
+           |
+     REFINE FUEL GRADES
+    FUD Slag / FOMO Plasma
+    ALPHA Flux / KEK Vapor
+           |
+           ↓
+   POWER PLANTS (tiers)
+   Sparkworks → Dynamo
+   → Netherforge → Corestack
+           |
+           ↓
+   COMPONENT MAKERS
+   ┌────────┴────────┐
+   ↓                 ↓
+ Coreforge      Remembrane Mill
+ (Pulsecores)    (MoteBanks)
+   CPU               Memory
+           |
+           ↓
+      COMPUTE STACK
+   ┌───────┼───────┬────────┬─────────┐
+   ↓       ↓       ↓        ↓         ↓
+ Servers  RPC   Indexers  Miners   Data Centers
+(Haunthost)(Callspire)(Loreloom)(Proof Hall)(Rackhollow)
+           |
+           ↓
+      NETHERLINK MESH
+    (internet on the Grid)
+           |
+      ┌────┴────┐
+      ↓         ↓
+  TRANSMUTE   BLACKOUT
+  (packets)   (Walk Ledger)
+      ↓         ↓
+  CITADEL    CARAVAN
+  receivers  through raids
+      ↓         ↓
+   PORTAL TITHE (either path, if it arrives)
+```
+
+Main objective: keep Netherlink green so Alchemica ships home without walking.  
+See `docs/grid-power-transmute-lore.md`.
+
+---
+
 ## Character Archetypes Web
 
 ```
