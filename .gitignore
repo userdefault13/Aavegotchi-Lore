@@ -7,5 +7,5 @@ public/uploads/*
 !public/uploads/.gitkeep
 .vercel
 
-# Retro Bowl Unity project (separate repo)
-retro-bowl-unity/
+# Gotchi Bowl Unity project (separate repo - Aavegotchi-Bowl)
+gotchi-bowl/
