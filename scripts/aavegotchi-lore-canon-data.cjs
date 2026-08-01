@@ -464,6 +464,173 @@ const AAVEGOTCHI_LORE_CAMPAIGN_NODES = [
   ),
 ];
 
+/** Phoenix Era lore pages (post-darkness rebirth) */
+const PHOENIX_LORE_ROOT = 'narrative/phoenix-era';
+
+const PHOENIX_LORE_PAGES = [
+  {
+    pageKey: PHOENIX_LORE_ROOT,
+    title: 'The Phoenix Era',
+    templateId: 'default',
+    parentKey: AAVEGOTCHI_LORE_ROOT,
+    tags: [
+      { label: 'rebirth', color: 'orange' },
+      { label: 'phoenix', color: 'red' },
+      { label: 'modern', color: 'cyan' },
+    ],
+    content: `When the Gotchiverse went dark, the map itself began to forget. Land that was never settled simply faded away. No parcels, no roads, no names. The frens called that empty northern reach the Ashfall, the place where the dream went to die.
+
+But a ghost doesn't die twice. In the quietest corner of the Ashfall, one last ember of Spirit Force refused to go out. The frens who stayed gathered around it, and they didn't mourn. They built.
+
+This is the story of Phoenix — the city raised by the many, built not to remember what was lost, but to create what comes next.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/ashfall`,
+    title: 'The Ashfall',
+    templateId: 'landmark',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { zone: 'Northern Reach', landmarkType: 'Forgotten Lands' },
+    tags: [{ label: 'forgotten', color: 'gray' }],
+    content: `The Ashfall is the northern reach of the Gotchiverse where the map itself began to forget. When the darkness came, land that was never settled simply faded away — no parcels, no roads, no names.
+
+The frens called it the place where the dream went to die. Empty lots stretched to the horizon, unmarked and unloved, gradually losing their form as the Gotchiverse's memory of them dimmed.
+
+But in the quietest corner of the Ashfall, something refused to fade. One last ember of Spirit Force, stubborn and bright, marked the place where everything would begin again.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/ember`,
+    title: 'The Last Ember',
+    templateId: 'lore-event',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { eventType: 'Rebirth', act: 'Phoenix Era' },
+    tags: [
+      { label: 'rebirth', color: 'orange' },
+      { label: 'hope', color: 'gold' },
+    ],
+    content: `In the quietest corner of the Ashfall, one last ember of Spirit Force refused to go out. The frens who stayed gathered around it, and they didn't mourn. They built.
+
+A ghost doesn't die twice. What seemed like an ending was only the space between breaths.
+
+Green grew first where the ember caught — grass, then saplings, then trees strong enough to shelter those who came to tend the light. That became Phoenix Park, planted so everyone after would know this was never a grave. It was a beginning.
+
+Where the ember burned, the ash itself melted and began to flow. Living Alchemica, freed from frozen earth, became the Ember Run — a river that divides what is grown from what is still being raised.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/phoenix-park`,
+    title: 'Phoenix Park',
+    templateId: 'landmark',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { zone: 'City of Phoenix', landmarkType: 'Sacred Grove' },
+    tags: [
+      { label: 'rebirth', color: 'orange' },
+      { label: 'memorial', color: 'gold' },
+    ],
+    content: `Green grew first where the ember caught. What began as a handful of brave saplings circling the Last Ember became Phoenix Park — the beating heart of the new city.
+
+The park was planted so everyone after would know this was never a grave. It was a beginning. Every tree represents a fren who stayed when the darkness came, who chose to build rather than mourn.
+
+At the park's center, the Last Ember still burns, tended by the Ember Keepers. Its light is softer now, no longer desperate, but steady and sure. On quiet nights, you can see its glow reflected in the leaves above, turning the whole canopy into a constellation of hope.
+
+Frens gather here to remember what was lost, yes — but more importantly, to imagine what comes next.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/ember-run`,
+    title: 'Ember Run',
+    templateId: 'landmark',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { zone: 'City of Phoenix', landmarkType: 'Alchemica River' },
+    tags: [
+      { label: 'alchemica', color: 'purple' },
+      { label: 'living-water', color: 'cyan' },
+    ],
+    content: `Where the Last Ember burned hottest, the ash itself melted and began to flow. That river of living Alchemica is the Ember Run.
+
+It divides what is grown from what is still being raised — Phoenix Park and the settled western bank from the eastern expanse of empty lots waiting to be claimed. The water glows faintly orange at night, warm to the touch, and some say it carries traces of the dreams that refused to die.
+
+The Ember Run is not just a boundary. It's a promise: cross it, and you're not visiting the past. You're building the future.
+
+The Grand Drawbridge is the only way across, and it's left open. Always. That's the point.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/grand-drawbridge`,
+    title: 'The Grand Drawbridge',
+    templateId: 'landmark',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { zone: 'City of Phoenix', landmarkType: 'Bridge' },
+    tags: [{ label: 'passage', color: 'brown' }],
+    content: `The Grand Drawbridge is the only way across the Ember Run. It connects Phoenix Park and the settled western bank to the eastern expanse — the empty lots, the unbuilt promises, the future waiting to be raised.
+
+Some say a drawbridge should be raised to keep threats out. But in Phoenix, the bridge is always down. Always open. That's the whole point.
+
+This is not a fortification. It's an invitation.
+
+The bridge's timbers are carved with the names of frens who helped raise it — not heroes, not legends, just people who showed up and built. Every plank a promise kept. Every crossing a choice to begin.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/city-of-phoenix`,
+    title: 'The City of Phoenix',
+    templateId: 'landmark',
+    parentKey: PHOENIX_LORE_ROOT,
+    runes: { zone: 'Phoenix', landmarkType: 'City' },
+    tags: [
+      { label: 'rebirth', color: 'orange' },
+      { label: 'community', color: 'cyan' },
+      { label: 'modern', color: 'blue' },
+    ],
+    content: `The Nine Aadepts raised the Citaadel to remember what was lost. The City of Phoenix is raised by the many, to build what comes next.
+
+Every empty lot is a promise kept in advance, leveled and marked, waiting for hands to raise it. The streets are wide and the foundations are sound. Some plots have buildings. Many don't. That's not failure — that's space for what's coming.
+
+You're early. That's the gift.
+
+Phoenix is not grand like the Citaadel. It doesn't have the Citaadel's ancient walls or mystical force fields. What it has is something simpler and stranger: it's being built by the people who will live in it, one plot at a time, with no prophecy to fulfill and no Aadepts to follow.
+
+Just frens who stayed when the map forgot, who chose the ember over the ash, and who keep choosing to build.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/philosophy`,
+    title: 'The Phoenix Way',
+    templateId: 'default',
+    parentKey: PHOENIX_LORE_ROOT,
+    tags: [
+      { label: 'philosophy', color: 'purple' },
+      { label: 'community', color: 'cyan' },
+    ],
+    content: `Phoenix has no council. No prophecy. No Hero Protocol etched in stone. What it has is a way of being that the frens who stayed discovered together:
+
+**Build, don't mourn.** The Ashfall was the place where the dream went to die. Phoenix is where it goes to become something new.
+
+**Many hands, no masters.** The Aadepts raised the Citaadel through sacrifice. Phoenix is raised by showing up, day after day, plot by plot.
+
+**You're early. That's the gift.** Every empty lot is a promise kept in advance. You don't need permission to build. You need hands and heart.
+
+**The bridge stays down.** The Ember Run divides what is grown from what is being raised, but the Grand Drawbridge is always open. Always.
+
+Some say Phoenix lacks the grandeur of the Citaadel, the ancient wisdom of the Tree of FUD, the strategic importance of the Grid settlements. They're right. Phoenix isn't trying to be those things.
+
+Phoenix is the city built by people who don't need to be legendary. They just need to show up.`,
+  },
+  {
+    pageKey: `${PHOENIX_LORE_ROOT}/ember-keepers`,
+    title: 'The Ember Keepers',
+    templateId: 'default',
+    parentKey: PHOENIX_LORE_ROOT,
+    tags: [
+      { label: 'guardians', color: 'orange' },
+      { label: 'community', color: 'cyan' },
+    ],
+    content: `The Ember Keepers are not a formal order. They're the frens who take turns tending the Last Ember in Phoenix Park, making sure it never goes out.
+
+Some keep watch for an hour. Some for a night. Some have been coming every day since the darkness lifted. There's no roster, no hierarchy, no sacred duty passed down through generations. You just show up, sit by the ember, and make sure it stays lit.
+
+That's it. That's the whole job.
+
+The Ember Keepers don't preach or prophesy. They don't interpret the flicker of the flame or claim to speak for the ash. When someone asks what the ember means, the usual answer is: "It means we're still here."
+
+On cold nights, Keepers tell stories around the ember — not grand myths or ancient lore, just the small true things. How they found the ember. Why they stayed. What they're building next. The ember listens to all of it, and burns a little brighter.`,
+  },
+];
+
 /** Landmark blurbs enriched with Aavegotchi Lore origin context. */
 const AAVEGOTCHI_LORE_LANDMARK_BLURBS = {
   'tree-of-fud':
@@ -482,6 +649,17 @@ const AAVEGOTCHI_LORE_LANDMARK_BLURBS = {
     'Deep mines in the Gotchiverse; part of the alchemical landscape formed from Nether Realm decay.',
   'liquidator-ruins':
     'Remnants of the Lickquidator invasion — bases erected far from the Citaadel as they research technology to one day assault the Great Portal.',
+  // Phoenix Era landmarks
+  'ashfall':
+    'Northern reach where the Gotchiverse map forgot. Land that was never settled faded away, becoming the place where the dream went to die — until the Last Ember refused to go out.',
+  'phoenix-park':
+    'Sacred grove grown around the Last Ember. Planted so everyone would know this was never a grave, but a beginning. Heart of the City of Phoenix.',
+  'ember-run':
+    'River of living Alchemica that flows where the Last Ember melted the ash. Divides what is grown from what is still being raised. The Grand Drawbridge is the only crossing.',
+  'grand-drawbridge':
+    'The only way across the Ember Run. Always left open — not a fortification, but an invitation. Every plank carved with names of frens who built it.',
+  'city-of-phoenix':
+    'Built by the many, not the legendary. Every empty lot is a promise kept in advance. The bridge stays down, and you\'re early — that\'s the gift.',
 };
 
 module.exports = {
@@ -490,4 +668,7 @@ module.exports = {
   AAVEGOTCHI_LORE_ARC,
   AAVEGOTCHI_LORE_CAMPAIGN_NODES,
   AAVEGOTCHI_LORE_LANDMARK_BLURBS,
+  // Phoenix Era additions
+  PHOENIX_LORE_ROOT,
+  PHOENIX_LORE_PAGES,
 };
