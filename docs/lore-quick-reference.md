@@ -105,6 +105,13 @@ A condensed cheat sheet for the most essential Aavegotchi worldbuilding elements
 - **The Aarena** - Battle arena for Gotchi-vs-Gotchi combat
 - **Aadventures** - Instanced dungeons for PvE exploration
 
+### Phoenix Era Locations (Post-Darkness)
+- **The Ashfall** - Northern reach where the map forgot itself
+- **Phoenix Park** - Sacred grove grown around the Last Ember
+- **Ember Run** - River of living Alchemica dividing past from future
+- **Grand Drawbridge** - The only crossing, always left open
+- **City of Phoenix** - Built by the many, not the legendary
+
 ---
 
 ## Core Concepts
@@ -182,6 +189,8 @@ A condensed cheat sheet for the most essential Aavegotchi worldbuilding elements
 13. **AGITHE Intervenes** - Designs Portal plan, can't control Lickquidators
 14. **The Great Sacrifice** - Aadepts give everything to build Portal & Citaadel
 15. **Current Era** - Uneasy peace, humans bonding with Gotchis, preparing for next battle
+16. **??? The Darkness ???** - Map begins to forget unsettled lands
+17. **The Phoenix Era** - Last Ember refuses to die, frens build the City of Phoenix
 
 ---
 
